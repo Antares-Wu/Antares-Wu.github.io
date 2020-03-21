@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Document Object Model</title>
+      <link href="/2020/03/21/document-object-model/"/>
+      <url>/2020/03/21/document-object-model/</url>
+      
+        <content type="html"><![CDATA[<p>The DOM is an object-based representation of the source HTML document. It has some differences compared with the source HTML document, but it is essentially an attempt to convert the structure and content of the HTML document into an object model that can be accessed by various programs.</p><p>There are two cases when the DOM can be different from the source HTML.</p><p>The first case is when HTML source code is not valid.</p><p>When the HTML code has some mistakes, during the processing of the DOM, the browser may correct some mistakes in the HTML code to form the valid HTML document as the DOM must be a valid interface. But sometimes HTML can be so broken that the browser can’t correct at all.</p><p>Changing content in the DOM will change the view of the web page, but it will not change the HTML source code.</p><p>The second case is when the DOM is modified by JavaScript.</p><p>DOM is a living model that can be modified by JavaScript, it provides an interface for JavaScript to modify the content, structure, or styling of the page.</p><p>Adding JavaScript programs will change the DOM, but will also not change the HTML source code.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> frontend </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> frontend </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Exercise 1 of Mathematical Foundation of Data Science &amp; Engineering</title>
       <link href="/2020/03/17/exercise-1-of-mathematical-foundation-of-data-science-engineering/"/>
       <url>/2020/03/17/exercise-1-of-mathematical-foundation-of-data-science-engineering/</url>
