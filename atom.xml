@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.wulinlong.com/"/>
-  <updated>2020-03-21T06:18:43.032Z</updated>
+  <updated>2020-03-25T15:02:37.865Z</updated>
   <id>www.wulinlong.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>second assignment of probability theory</title>
+    <link href="www.wulinlong.com/2020/03/24/second-assignment-of-probability-theory/"/>
+    <id>www.wulinlong.com/2020/03/24/second-assignment-of-probability-theory/</id>
+    <published>2020-03-23T16:24:44.000Z</published>
+    <updated>2020-03-25T15:02:37.865Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;第一章习题14（p50）&lt;/p&gt;
+&lt;p&gt;解：&lt;/p&gt;
+&lt;p&gt;a.$\frac{1}{6}$&lt;/p&gt;
+&lt;p&gt;b. there are six kinds of situations，two of them are pairs, so the
+        
+      
+    
+    </summary>
+    
+      <category term="assignment" scheme="www.wulinlong.com/categories/assignment/"/>
+    
+    
+      <category term="probability theory" scheme="www.wulinlong.com/tags/probability-theory/"/>
+    
+  </entry>
   
   <entry>
     <title>Document Object Model</title>

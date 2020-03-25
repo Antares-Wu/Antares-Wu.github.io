@@ -9,8 +9,8 @@
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
     <meta name="description" content="数学基础第一次作业
-1. $\begin{pmatrix} -1 &amp;amp; -4 &amp;amp; 2\\ -5 &amp;amp; 2 &amp;amp; 1\\ \end{pmatrix}$
-2. $w^{cat}=\begin{bmatrix} 1 \\">
+1. $\begin{pmatrix} -1 &amp;amp; -4 &amp;amp; 2\ -5 &amp;amp; 2 &amp;amp; 1\ \end{pmatrix}$
+2. $w^{cat}=\begin{bmatrix} 1 \ 0\">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -471,8 +471,8 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="数学基础第一次作业"><a href="#数学基础第一次作业" class="headerlink" title="数学基础第一次作业"></a>数学基础第一次作业</h1><p><img src="0.png" alt></p>
-<p><strong>1</strong>. $\begin{pmatrix} -1 &amp; -4 &amp; 2\\ -5 &amp; 2 &amp; 1\\ \end{pmatrix}$</p>
-<p><strong>2</strong>. $w^{cat}=\begin{bmatrix} 1 \\ 0\\0\\0 \end{bmatrix}$,$w^{dog}=\begin{bmatrix} 0\\1\\0\\0\end{bmatrix}$,$w^{parrot}=\begin{bmatrix} 0\\0\\1\\0\end{bmatrix}$,$w^{human}=\begin{bmatrix} 0\\0\\0\\1\end{bmatrix}$</p>
+<p><strong>1</strong>. $\begin{pmatrix} -1 &amp; -4 &amp; 2\ -5 &amp; 2 &amp; 1\ \end{pmatrix}$</p>
+<p><strong>2</strong>. $w^{cat}=\begin{bmatrix} 1 \ 0\0\0 \end{bmatrix}$,$w^{dog}=\begin{bmatrix} 0\1\0\0\end{bmatrix}$,$w^{parrot}=\begin{bmatrix} 0\0\1\0\end{bmatrix}$,$w^{human}=\begin{bmatrix} 0\0\0\1\end{bmatrix}$</p>
 <p><strong>3</strong>. 计算IDF值：$idf_{I}=\frac{4}{3},idf_{you}=\frac{4}{3},idf_{know}=\frac{4}{4},idf_{that}=\frac{4}{2}$</p>
 <p>计算TF值：$tf_{I}=\frac{4}{17},tf_{you}=\frac{3}{17},tf_{know}=\frac{7}{17},tf_{that}=\frac{3}{17}$</p>
 <p>TF-IDF值：$tfidf_{I}=0.068,tfidf_{you}=0.051,tfidf_{know}=0,tfidf_{that}=0.122$</p>
@@ -480,32 +480,32 @@
 <p>其中，xi 表示第i 张图像转换的大小为D × 1 的列向量。<br>评分函数的参数包括W 和b，W 是K × D 的矩阵，b 是K × 1 的列向量，K 表示类别的数量。</p>
 <p>线性分类器主要有两部分组成：<br><strong>评分函数</strong>：原始图像数据到类别标签得分的映射;<br><strong>损失函数</strong>：用来量化预测标签的得分与真实标签之间的一致性。<br>该方法可以转化为一个最优化问题，在最优化过程中，将通过更新评分函数的参数来最小<br>化损失函数值。</p>
 <p>引入两种简单的损失函数：</p>
-<p>0-1 损失函数：<br>$L(Y,f(X)) =\begin{cases} 1 &amp; Y\neq f(X) \\ 0&amp; Y=f(X) \end{cases}$</p>
+<p>0-1 损失函数：<br>$L(Y,f(X)) =\begin{cases} 1 &amp; Y\neq f(X) \ 0&amp; Y=f(X) \end{cases}$</p>
 <p>平方损失函数：<br>$L(Y,f(X)) = (Y − f(X))^2$</p>
 <p><strong>5</strong>. 为了方便损失函数计算，使用Softmax函数将一组$(-\infty,+\infty)$ 的得分$f$ 转换为一组$(0,1)$ 概率，并且这组概率的和为$1$。每张训练图像属于类别 $i$ 的概率得分用公式表示为：</p>
 <p>$$p_{i}=\frac{e^{f_{i}}}{\sum_{j=1}^{K} e^{f_{j}}}$$</p>
 <p>根据预测类别的概率得分，使用交叉熵函数作为损失函数，计算真实标签与预测标签之间的损失。<br>将标签 $y $ 转换为 $one − hot $ 向量$y$，例如真实标签为 4，则 $y = [0; 0; 0; 0; 1]$。<br>每张训练图像对应的交叉熵损失用公式表示为：</p>
-<p>$$l=-\sum_{c=1}^{K} \boldsymbol{y}_{c} \log \left(\boldsymbol{p}_{c}\right)$$</p>
+<p>$$l=-\sum_{c=1}^{K} \boldsymbol{y}<em>{c} \log \left(\boldsymbol{p}</em>{c}\right)$$</p>
 <p>其中, $K$ 是类别的数量；$y_c$ 表示当前图像的指示变量，如果预测标签与真实标签相同就<br>是$1$，否则为$0$；$p_c$ 是当前图像属于类别 $c$ 的概率得分。</p>
 <p>显然每张图像只需要计算一个类别的概率得分和真实标签的交叉熵。因此第i 张图像的交<br>叉损失函数又可以表示为：</p>
 <p>$$l_{i}=-\log \left(\frac{e^{f_{y_{i}}}}{\sum_{j=1}^{K} e^{f_{j}}}\right)=-f_{y_{i}}+\log \left(\sum_{j=1}^{K} e^{f_{j}}\right)$$</p>
 <p>其中, $K$ 是类别的数量；$y_c$ 表示第$i$张图像的类别标签$ID$；$p_c$ 是当前图像属于类别 $c$ 的概率得分。</p>
 <p>由概率得分公式可得，此时模型给各个数据的概率评分分别为：</p>
-<p>$\begin{pmatrix} \frac{e^2}{e^2+e^8} \\ \frac{e^8}{e^2+e^8} \end{pmatrix}$，$\begin{pmatrix} \frac{e^1}{e^1+e^9} \\ \frac{e^9}{e^1+e^9} \end{pmatrix}$，$\begin{pmatrix} \frac{e^3}{e^3+e^2} \\ \frac{e^2}{e^3+e^2} \end{pmatrix}$，$\begin{pmatrix} \frac{e^1}{e^1+e^5} \\ \frac{e^5}{e^1+e^5} \end{pmatrix}$，$\begin{pmatrix} \frac{e^2}{e^2+e^0} \\ \frac{e^0}{e^2+e^0} \end{pmatrix}$</p>
+<p>$\begin{pmatrix} \frac{e^2}{e^2+e^8} \ \frac{e^8}{e^2+e^8} \end{pmatrix}$，$\begin{pmatrix} \frac{e^1}{e^1+e^9} \ \frac{e^9}{e^1+e^9} \end{pmatrix}$，$\begin{pmatrix} \frac{e^3}{e^3+e^2} \ \frac{e^2}{e^3+e^2} \end{pmatrix}$，$\begin{pmatrix} \frac{e^1}{e^1+e^5} \ \frac{e^5}{e^1+e^5} \end{pmatrix}$，$\begin{pmatrix} \frac{e^2}{e^2+e^0} \ \frac{e^0}{e^2+e^0} \end{pmatrix}$</p>
 <p>由交叉熵损失函数可得，各个数据的交叉熵损失分别为：</p>
 <p>$-ln(\frac{e^8}{e^2+e^8})$,$-ln(\frac{e^9}{e^1+e^9})$,$-ln(\frac{e^2}{e^3+e^2})$,$-ln(\frac{e^1}{e^1+e^5})$,$-ln(\frac{e^2}{e^2+e^0})$</p>
 <p><strong>6</strong>. <strong>结构风险(structural risk)</strong><br>在假设空间、损失函数以及训练数据集确定的情况下，结构风险定义为在经验风险上加上<br>表示模型复杂度的正则化项或罚项：</p>
 <p>$$R_{s r m}(f)=\frac{1}{N} \sum_{i=1}^{N} L\left(y_{i}, f\left(x_{i}\right)\right)+\lambda J(f)$$</p>
 <p>其中$J_(f)$ 为模型的复杂度，是定义在假设空间F 上的泛函。模型f 越复杂，复杂度$J_(f)$ 就<br>越大；反之，模型f 越简单，复杂度$J_(f)$ 就越小。也就是说，复杂度表示了对复杂模型的<br>惩罚。$\lambda$ ≥ 0 是系数，用以权衡经验风险和模型复杂度。结构风险小需要经验风险与模型复<br>杂度同时小。结构风险小的模型往往对训练数据以及未知的测试数据都有较好的预测。</p>
 <p><strong>结构风险最小化准则(structural risk minimization, SRM)</strong><br>结构风险最小化策略认为结构风险最小的模型是最优的模型。所以求最优模型，就是求解<br>最优化问题：</p>
-<p>$$\min _{f \in \mathcal{F}} \frac{1}{N} \sum_{i=1}^{N} L\left(y_{i}, f\left(x_{i}\right)\right)+\lambda J(f)$$</p>
+<p>$$\min <em>{f \in \mathcal{F}} \frac{1}{N} \sum</em>{i=1}^{N} L\left(y_{i}, f\left(x_{i}\right)\right)+\lambda J(f)$$</p>
 <p>上述最优化问题一般也称为<strong>正则化(regularization)</strong>，正则化是结构风险最小化策略的实现。</p>
 <p>在本题中，引入<strong>最小二乘问题</strong>的损失函数：</p>
 <p>$$\min _{\boldsymbol{\theta}} \frac{1}{N}|\boldsymbol{y}-\boldsymbol{X} \boldsymbol{\theta}|^{2}$$</p>
 <p>通过添加仅涉及$\theta$ 的正则项可以改善最小二乘问题的稳定性。<br>比如添加易于计算导数的$L_2$正则项：</p>
-<p>$$\min _{\boldsymbol{\theta}} \frac{1}{N}|\boldsymbol{y}-\boldsymbol{X} \boldsymbol{\theta}|^{2}+\frac{\lambda}{2}|\boldsymbol{\theta}|_{2}^{2}$$</p>
+<p>$$\min <em>{\boldsymbol{\theta}} \frac{1}{N}|\boldsymbol{y}-\boldsymbol{X} \boldsymbol{\theta}|^{2}+\frac{\lambda}{2}|\boldsymbol{\theta}|</em>{2}^{2}$$</p>
 <p>也可以添加$L_1$正则项得到参数更为稀疏的模型：</p>
-<p>$$\min _{\boldsymbol{\theta}} \frac{1}{N}|\boldsymbol{y}-\boldsymbol{X} \boldsymbol{\theta}|^{2}+\lambda|\boldsymbol{\theta}|_{1}$$</p>
+<p>$$\min <em>{\boldsymbol{\theta}} \frac{1}{N}|\boldsymbol{y}-\boldsymbol{X} \boldsymbol{\theta}|^{2}+\lambda|\boldsymbol{\theta}|</em>{1}$$</p>
 
             </div>
             <hr />
@@ -691,28 +691,6 @@
         </div>
     </div>
 
-    
-    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: '1240b746b620447e36e0',
-        clientSecret: 'ffc4f5a7bb0d81c2c2b0a2c383a1fdb6b811c62f',
-        repo: 'Antares-Wu.github.io',
-        owner: 'Antares-Wu',
-        admin: "Antares-Wu",
-        id: '2020/03/17/exercise-1-of-mathematical-foundation-of-data-science-engineering/',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
     
 
     
@@ -1023,7 +1001,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.png" class="responsive-img" alt="Document Object Model">
+                        <img src="/medias/featureimages/3.png" class="responsive-img" alt="Document Object Model">
                         
                         <span class="card-title">Document Object Model</span>
                     </div>
@@ -1072,7 +1050,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.png" class="responsive-img" alt="first assignment of probability theory">
+                        <img src="/medias/featureimages/3.png" class="responsive-img" alt="first assignment of probability theory">
                         
                         <span class="card-title">first assignment of probability theory</span>
                     </div>
@@ -1262,10 +1240,17 @@
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             &copy; 2020 powered by wulinlong. All Rights Reserved.
-
+            
+            
+            <span id="icp"><img src="/medias/icp.png"  style="vertical-align: text-bottom;" />
+                <a href="www.beian.miit.gov.cn" target="_blank">沪ICP备20006975号</a>
+            </span>
+            
+            
+            <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">3.3k</span>
+            <span class="white-color">5.6k</span>
             
 
             <br>
