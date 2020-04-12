@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.wulinlong.com/"/>
-  <updated>2020-03-25T15:02:37.865Z</updated>
+  <updated>2020-04-12T16:56:26.897Z</updated>
   <id>www.wulinlong.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>second assignment of probability theory</title>
-    <link href="www.wulinlong.com/2020/03/24/second-assignment-of-probability-theory/"/>
-    <id>www.wulinlong.com/2020/03/24/second-assignment-of-probability-theory/</id>
-    <published>2020-03-23T16:24:44.000Z</published>
-    <updated>2020-03-25T15:02:37.865Z</updated>
+    <title>hexo博客从github到阿里云</title>
+    <link href="www.wulinlong.com/2020/04/11/hexo-bo-ke-cong-github-ma-yun-qian-ru-a-li-yun-fu-wu-qi/"/>
+    <id>www.wulinlong.com/2020/04/11/hexo-bo-ke-cong-github-ma-yun-qian-ru-a-li-yun-fu-wu-qi/</id>
+    <published>2020-04-11T15:24:24.000Z</published>
+    <updated>2020-04-12T16:56:26.897Z</updated>
     
     <summary type="html">
     
@@ -29,20 +29,12 @@
       
         
         
-          &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;第一章习题14（p50）&lt;/p&gt;
-&lt;p&gt;解：&lt;/p&gt;
-&lt;p&gt;a.$\frac{1}{6}$&lt;/p&gt;
-&lt;p&gt;b. there are six kinds of situations，two of them are pairs, so the
+          &lt;p&gt;建站到现在也有一段时间了，一开始只是hexo+github，因为github的服务器在国外，国内访问速度比较慢，所以在码云上又部署了一份，智能解析，国内走码云，国外走github。但是后来发现码云的服务器是腾讯云的，并且不支持阿里云备案的接入，网站无法访问，于是放弃gite
         
       
     
     </summary>
     
-      <category term="assignment" scheme="www.wulinlong.com/categories/assignment/"/>
-    
-    
-      <category term="probability theory" scheme="www.wulinlong.com/tags/probability-theory/"/>
     
   </entry>
   
@@ -74,8 +66,8 @@
   
   <entry>
     <title>Exercise 1 of Mathematical Foundation of Data Science &amp; Engineering</title>
-    <link href="www.wulinlong.com/2020/03/17/exercise-1-of-mathematical-foundation-of-data-science-engineering/"/>
-    <id>www.wulinlong.com/2020/03/17/exercise-1-of-mathematical-foundation-of-data-science-engineering/</id>
+    <link href="www.wulinlong.com/2020/03/17/mathematical-foundation-of-data-science-engineering-exercises/"/>
+    <id>www.wulinlong.com/2020/03/17/mathematical-foundation-of-data-science-engineering-exercises/</id>
     <published>2020-03-16T16:36:18.000Z</published>
     <updated>2020-03-19T06:26:30.501Z</updated>
     
@@ -99,11 +91,37 @@
   </entry>
   
   <entry>
+    <title>在樱花漫天飞舞的时刻</title>
+    <link href="www.wulinlong.com/2020/03/15/zai-ying-hua-man-tian-fei-wu-de-shi-ke/"/>
+    <id>www.wulinlong.com/2020/03/15/zai-ying-hua-man-tian-fei-wu-de-shi-ke/</id>
+    <published>2020-03-15T08:24:27.000Z</published>
+    <updated>2020-04-11T17:23:24.954Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;div align=&quot;middle&quot;&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="www.wulinlong.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="www.wulinlong.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>first assignment of probability theory</title>
-    <link href="www.wulinlong.com/2020/03/14/first-assignment-of-probability-theory/"/>
-    <id>www.wulinlong.com/2020/03/14/first-assignment-of-probability-theory/</id>
+    <link href="www.wulinlong.com/2020/03/14/probability-theory-exercises/"/>
+    <id>www.wulinlong.com/2020/03/14/probability-theory-exercises/</id>
     <published>2020-03-14T13:27:34.000Z</published>
-    <updated>2020-03-16T16:56:31.909Z</updated>
+    <updated>2020-04-11T15:17:59.420Z</updated>
     
     <summary type="html">
     
@@ -130,32 +148,6 @@
     <id>www.wulinlong.com/2020/03/03/xie-zai-kai-xue-zhi-qian/</id>
     <published>2020-03-03T08:24:27.000Z</published>
     <updated>2020-03-12T16:39:50.579Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;div align=&quot;middle&quot;&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="www.wulinlong.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="www.wulinlong.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在樱花漫天飞舞的时刻</title>
-    <link href="www.wulinlong.com/2020/03/03/zai-ying-hua-man-tian-fei-wu-de-shi-ke/"/>
-    <id>www.wulinlong.com/2020/03/03/zai-ying-hua-man-tian-fei-wu-de-shi-ke/</id>
-    <published>2020-03-03T08:24:27.000Z</published>
-    <updated>2020-03-17T14:00:55.389Z</updated>
     
     <summary type="html">
     

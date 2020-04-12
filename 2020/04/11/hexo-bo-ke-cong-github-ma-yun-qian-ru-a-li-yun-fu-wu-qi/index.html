@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Document Object Model, ECNU DaSE">
+    <meta name="keywords" content="hexo博客从github到阿里云, ECNU DaSE">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="The DOM is an object-based representation of the source HTML document. It has some differences compared with the source ">
+    <meta name="description" content="建站到现在也有一段时间了，一开始只是hexo+github，因为github的服务器在国外，国内访问速度比较慢，所以在码云上又部署了一份，智能解析，国内走码云，国外走github。但是后来发现码云的服务器是腾讯云的，并且不支持阿里云备案的接">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Document Object Model | Antares-Wu&#39;s blog</title>
+    <title>hexo博客从github到阿里云 | Antares-Wu&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -290,13 +290,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('\medias\featureimages\网站截图1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Document Object Model
+                        hexo博客从github到阿里云
                     </div>
                 </div>
             </div>
@@ -406,24 +406,11 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/frontend/" target="_blank">
-                            <span class="chip bg-color">frontend</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/frontend/" class="post-category" target="_blank">
-                            frontend
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -431,7 +418,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-21
+                    2020-04-11
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -445,14 +432,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    202
+                    769
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
                 
@@ -468,15 +455,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>The DOM is an object-based representation of the source HTML document. It has some differences compared with the source HTML document, but it is essentially an attempt to convert the structure and content of the HTML document into an object model that can be accessed by various programs.</p>
-<p>There are two cases when the DOM can be different from the source HTML.</p>
-<p>The first case is when HTML source code is not valid.</p>
-<p>When the HTML code has some mistakes, during the processing of the DOM, the browser may correct some mistakes in the HTML code to form the valid HTML document as the DOM must be a valid interface. But sometimes HTML can be so broken that the browser can’t correct at all.</p>
-<p>Changing content in the DOM will change the view of the web page, but it will not change the HTML source code.</p>
-<p>The second case is when the DOM is modified by JavaScript.</p>
-<p>DOM is a living model that can be modified by JavaScript, it provides an interface for JavaScript to modify the content, structure, or styling of the page.</p>
-<p>Adding JavaScript programs will change the DOM, but will also not change the HTML source code.</p>
+                <p>建站到现在也有一段时间了，一开始只是hexo+github，因为github的服务器在国外，国内访问速度比较慢，所以在码云上又部署了一份，智能解析，国内走码云，国外走github。但是后来发现码云的服务器是腾讯云的，并且不支持阿里云备案的接入，网站无法访问，于是放弃giteepages，决定在阿里云上部署，国内解析走阿里云。</p>
+<p>建站到现在精力基本上都花在优化博客上了，文章却没怎么写。现在虽然网站图片加载还没有cdn加速，但是国内访问速度应该可以接受了，希望以后可以多写写文章。</p>
+<p>网上的云服务器部署教程大都是CentOs，而我选的操作系统是Ubuntu 18.04.4 LTS，所以找了很多教程，也花了很多时间，踩了很多坑。下面记录hexo博客阿里云的部署：</p>
+<h3 id="1-安装git和nginx"><a href="#1-安装git和nginx" class="headerlink" title="1.安装git和nginx"></a>1.安装git和nginx</h3><p>首先需要在云服务器上安装git和nginx</p>
+<pre><code>apt-get update
+apt-get install git-core nginx</code></pre><h3 id="2-配置Nginx"><a href="#2-配置Nginx" class="headerlink" title="2.配置Nginx"></a>2.配置Nginx</h3><p> /var/www/blog目录用于放置生成的静态文件</p>
+<pre><code>mkdir /var/www/blog</code></pre><p>编写nginx配置文件</p>
+<pre><code>vim /etc/nginx/conf.d/blog.conf</code></pre><p>监听80端口</p>
+<pre><code>server
+{
+    listen 8080;
+    root /var/www/blog;
+}</code></pre><p>重启nginx</p>
+<pre><code>systemctl restart nginx</code></pre><p>如果失败，可以看看nginx报什么错，是不是配置写错了，或者是不是正确安装了。</p>
+<p>可以使用</p>
+<pre><code>nginx -t   #检查nginx配置是否正确
+#正常情况下会返回：
+#nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+#nginx: configuration file /etc/nginx/nginx.conf test is successful</code></pre><p>如果报端口占用的话，</p>
+<pre><code>netstat -tlpn   #观察使用应用使用端口的情况</code></pre><p>使用kill + 对应的pid，关闭使用这个端口的程序，</p>
+<pre><code>kill 3480 #关掉pid为3480的进程</code></pre><h3 id="3-配置Git-Hooks"><a href="#3-配置Git-Hooks" class="headerlink" title="3. 配置Git Hooks"></a>3. 配置Git Hooks</h3><h4 id="创建Git裸仓库"><a href="#创建Git裸仓库" class="headerlink" title="创建Git裸仓库"></a>创建Git裸仓库</h4><p>生成blog.git作为远程Git仓库，Hexo在本地生成的博客静态文件可以通过push与其同步。</p>
+<pre><code>mkdir ~/blog.git &amp;&amp; cd ~/blog.git
+git init --bare</code></pre><h4 id="配置Hooks脚本"><a href="#配置Hooks脚本" class="headerlink" title="配置Hooks脚本"></a>配置Hooks脚本</h4><p>编写post-receive脚本使其在blog.git仓库接收到push时执行。</p>
+<pre><code>vim blog.git/hooks/post-receive</code></pre><p>脚本非常简单，删除原有的/var/www/blog目录，然后从blog.git仓库clone新的博客静态文件。</p>
+<pre><code>#!/bin/bash
 
+rm -rf /var/www/blog
+git clone /root/blog.git /var/www/blog</code></pre><p>给post-receive脚本执行权限</p>
+<pre><code>chmod +x blog.git/hooks/post-receive</code></pre><h3 id="4-部署Hexo博客"><a href="#4-部署Hexo博客" class="headerlink" title="4. 部署Hexo博客"></a>4. 部署Hexo博客</h3><h4 id="在本地hexo修改-config-yml"><a href="#在本地hexo修改-config-yml" class="headerlink" title="在本地hexo修改_config.yml"></a>在本地hexo修改_config.yml</h4><pre><code>deploy:
+  type: git
+  repo: root@xx.xx.xx.xx:blog.git     #用户名@你的ip地址:blog.git</code></pre><h4 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h4><p>hexo先生成新的博客静态文件，然后通过git将其同步到云服务器的blog.git仓库。</p>
+<pre><code>hexo d</code></pre><h3 id="5-云安全组和dns解析"><a href="#5-云安全组和dns解析" class="headerlink" title="5.云安全组和dns解析"></a>5.云安全组和dns解析</h3><p>阿里云的服务器后台端口不是默认开放的，需要手动在云安全组里添加<strong>80/443端口</strong>访问许可.</p>
+<p>云服务器的防火墙如果开着，也有可能导致不能访问，</p>
+<pre><code>ufw status #观察防火墙状态
+ufw disable #关闭防火墙</code></pre><p>可以用wget测试nginx是不是成功运行</p>
+<pre><code>wget http://xx.xx.xx.xx  #你的ip地址</code></pre>
             </div>
             <hr />
 
@@ -634,9 +648,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Document Object Model》
+                    《hexo博客从github到阿里云》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/03/21/document-object-model/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/11/hexo-bo-ke-cong-github-ma-yun-qian-ru-a-li-yun-fu-wu-qi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Antares-Wu
             </a> 采用
@@ -676,9 +690,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'www.wulinlong.com/2020/03/21/document-object-model/';
-        this.page.identifier = '/2020/03/21/document-object-model/';
-        this.page.title = 'Document Object Model';
+        this.page.url = 'www.wulinlong.com/2020/04/11/hexo-bo-ke-cong-github-ma-yun-qian-ru-a-li-yun-fu-wu-qi/';
+        this.page.identifier = '/2020/04/11/hexo-bo-ke-cong-github-ma-yun-qian-ru-a-li-yun-fu-wu-qi/';
+        this.page.title = 'hexo博客从github到阿里云';
     };
     let disqus_shortname = '';
 
@@ -963,9 +977,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/04/11/hexo-bo-ke-cong-github-ma-yun-qian-ru-a-li-yun-fu-wu-qi/">
                     <div class="card-image">
@@ -982,14 +997,15 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-11
+                            </span>
                         <span class="publish-author">
                             
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1000,30 +1016,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/17/mathematical-foundation-of-data-science-engineering-exercises/">
+                <a href="/2020/03/21/document-object-model/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/数学基础作业1.png" class="responsive-img" alt="Exercise 1 of Mathematical Foundation of Data Science & Engineering">
                         
-                        <span class="card-title">Exercise 1 of Mathematical Foundation of Data Science & Engineering</span>
+                        <img src="/medias/featureimages/5.png" class="responsive-img" alt="Document Object Model">
+                        
+                        <span class="card-title">Document Object Model</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            concerning nlp and dl
+                            different between DOM and HTML source code
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/exercises/" class="post-category" target="_blank">
-                                    exercises
+                            <a href="/categories/frontend/" class="post-category" target="_blank">
+                                    frontend
                                 </a>
                             
                             
@@ -1033,8 +1050,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Mathematical-Foundation-of-Data-Science-Engineering/" target="_blank">
-                        <span class="chip bg-color">Mathematical Foundation of Data Science &amp; Engineering</span>
+                    <a href="/tags/frontend/" target="_blank">
+                        <span class="chip bg-color">frontend</span>
                     </a>
                     
                 </div>
