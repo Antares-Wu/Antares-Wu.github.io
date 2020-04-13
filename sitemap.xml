@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>www.wulinlong.com/2020/03/21/document-object-model/</loc>
+    
+    <lastmod>2020-04-13T12:36:32.439Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>www.wulinlong.com/2020/03/14/probability-theory-exercises/</loc>
+    
+    <lastmod>2020-04-13T12:36:19.801Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>www.wulinlong.com/2020/03/15/zai-ying-hua-man-tian-fei-wu-de-shi-ke/</loc>
     
     <lastmod>2020-04-13T12:33:15.671Z</lastmod>
@@ -44,20 +58,6 @@
   </url>
   
   <url>
-    <loc>www.wulinlong.com/2020/03/14/probability-theory-exercises/</loc>
-    
-    <lastmod>2020-04-11T15:17:59.420Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>www.wulinlong.com/2020/03/21/document-object-model/</loc>
-    
-    <lastmod>2020-03-21T06:18:43.032Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>www.wulinlong.com/tags/index.html</loc>
     
     <lastmod>2020-02-27T21:25:56.306Z</lastmod>
@@ -86,14 +86,14 @@
   </url>
   
   <url>
-    <loc>www.wulinlong.com/categories/index.html</loc>
+    <loc>www.wulinlong.com/archives/index.html</loc>
     
     <lastmod>2019-09-26T05:13:10.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>www.wulinlong.com/archives/index.html</loc>
+    <loc>www.wulinlong.com/categories/index.html</loc>
     
     <lastmod>2019-09-26T05:13:10.000Z</lastmod>
     
