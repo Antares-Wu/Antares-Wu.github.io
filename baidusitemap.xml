@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>www.wulinlong.com/2020/04/11/hexo-bo-ke-cong-github-dao-a-li-yun/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
     <loc>www.wulinlong.com/2020/03/17/mathematical-foundation-of-data-science-engineering-exercises/</loc>
     <lastmod>2020-04-15</lastmod>
   </url>  <url>
@@ -17,9 +20,6 @@
     <lastmod>2020-04-13</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/</loc>
-    <lastmod>2020-04-13</lastmod>
-  </url>  <url>
-    <loc>www.wulinlong.com/2020/04/11/hexo-bo-ke-cong-github-dao-a-li-yun/</loc>
     <lastmod>2020-04-13</lastmod>
   </url>
 </urlset>
