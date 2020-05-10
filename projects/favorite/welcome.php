@@ -92,8 +92,8 @@ for ($i=0; $i<$arrlength; $i++) {
     $url_value = $json_arr[$i]['url'];
     $url_label = $json_arr[$i]['label'];
     $url_note = $json_arr[$i]['note'];
-
-    echo "url=" . "<a href=http://'$url_value' target=\"_blank\" > $url_value</a> "   . ", label=" . $url_label . ", note=" . $url_note;
+    $extra_url="http://";
+    echo "url=" . "<a href='$extra_url$url_value' target=\"_blank\" > $url_value</a> "   . ", label=" . $url_label . ", note=" . $url_note;
     echo "<br>";
 }
 
