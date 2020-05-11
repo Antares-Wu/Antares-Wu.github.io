@@ -696,5 +696,8 @@ else {
 
 <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
+<?php
+header("location:welcome.php");
+?>
 </body>
 </html>
