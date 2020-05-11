@@ -276,12 +276,12 @@
 
 </header>
 
-<style type="text/css">
-    /* don't remove. */
-    .about-cover {
-        height: 75vh;
-    }
-</style>
+<!--<style type="text/css">-->
+<!--    /* don't remove. */-->
+<!--    .about-cover {-->
+<!--        height: 75vh;-->
+<!--    }-->
+<!--</style>-->
 
 <!--<style>-->
 <!--    body-->
@@ -327,11 +327,11 @@
 <!-- 定义url的数据结构 -->
 <?php
 class Site {
-    /* 成员变量 */
-    var $url;
-    var $label;
-    var $note;
-    /* 成员函数 */
+  /* 成员变量 */
+  var $url;
+  var $label;
+  var $note;
+  /* 成员函数 */
 }
 
 ?>
@@ -366,6 +366,7 @@ else {
     // encode json and save to file
     file_put_contents('example.json', json_encode($json_arr));
     exit(0);
+    header("location:welcome.php");
     header("location:welcome.php");
 }
 
@@ -426,6 +427,7 @@ else {
     // encode json and save to file
     file_put_contents('example.json', json_encode($json_arr));
     header("location:welcome.php");
+    header("location:welcome.php");
 }
 ?>
 
@@ -457,6 +459,7 @@ else {
     }
     // encode json and save to file
     file_put_contents('example.json', json_encode($json_arr));
+    header("location:welcome.php");
     header("location:welcome.php");
 }
 
@@ -492,6 +495,7 @@ else {
 
     // encode json and save to file
     file_put_contents('example.json', json_encode($json_arr));
+    header("location:welcome.php");
     header("location:welcome.php");
 }
 ?>
