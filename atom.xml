@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.wulinlong.com/"/>
-  <updated>2020-06-15T09:07:03.749Z</updated>
+  <updated>2020-06-15T17:31:35.644Z</updated>
   <id>www.wulinlong.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode14最长公共前缀</title>
+    <link href="www.wulinlong.com/2020/06/16/leetcode14-zui-chang-gong-gong-qian-zhui/"/>
+    <id>www.wulinlong.com/2020/06/16/leetcode14-zui-chang-gong-gong-qian-zhui/</id>
+    <published>2020-06-15T16:51:19.000Z</published>
+    <updated>2020-06-15T17:31:35.644Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;编写一个函数来查找字符串数组中的最长公共前缀。&lt;/p&gt;
+&lt;p&gt;如果不存在公共前缀，返回空字符串 “”。&lt;/p&gt;
+&lt;p&gt;示例 1:&lt;/p&gt;
+&lt;p&gt;输入: [“flower”,”flow”,”flight”]&lt;br&gt;输出: “fl”&lt;br&gt;示例 2:&lt;/p&gt;
+&lt;p&gt;输入:
+        
+      
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/categories/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/tags/Leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>I/O subsystem</title>
@@ -48,7 +78,7 @@
     <link href="www.wulinlong.com/2020/06/14/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/"/>
     <id>www.wulinlong.com/2020/06/14/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/</id>
     <published>2020-06-14T09:11:01.000Z</published>
-    <updated>2020-06-14T10:03:09.262Z</updated>
+    <updated>2020-06-15T16:33:37.734Z</updated>
     
     <summary type="html">
     

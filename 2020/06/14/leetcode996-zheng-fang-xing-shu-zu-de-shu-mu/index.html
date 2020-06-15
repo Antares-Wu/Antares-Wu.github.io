@@ -494,7 +494,7 @@
         <span class="token comment" spellcheck="true">#构造一个图，每个数作为一个节点，两个节点如果符合条件的话，就连一条边</span>
         <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> todo<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#dfs，传入两个参数，第一个参数是某个数，第二个参数是总长度减一</span>
             count<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">-=</span><span class="token number">1</span>    <span class="token comment" spellcheck="true">#x的count减一，表示已经经历过一次这个数了，当然一个数字是可以重复次数的，count不一定是1</span>
-            <span class="token keyword">if</span> todo <span class="token operator">==</span> <span class="token number">0</span>    <span class="token comment" spellcheck="true">#如果todo是0的话，ans就置为1 ,作为递归终结的条件</span>
+            <span class="token keyword">if</span> todo <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#如果todo是0的话，ans就置为1 ,作为递归终结的条件</span>
                 ans <span class="token operator">=</span> <span class="token number">1</span>     
             <span class="token keyword">else</span><span class="token punctuation">:</span>
                 ans <span class="token operator">=</span> <span class="token number">0</span>     <span class="token comment" spellcheck="true">#如果todo不是0的话，ans置为0，防止递归的时候出错。</span>
@@ -1240,7 +1240,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">8.8k</span>
+            <span class="white-color">9.2k</span>
             
 
             <br>
