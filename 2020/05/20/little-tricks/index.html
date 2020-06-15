@@ -4,13 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="关于开源的一点个人理解, ECNU DaSE">
+    <meta name="keywords" content="little tricks, ECNU DaSE">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="忽然想到要聊一聊开源，就写下这篇随笔，作为记录。在上大学之前，我知道开源，但是这个词汇在我的生活里出现得还不多。进入大二以来，我逐渐更加了解开源，我把我对开源软件的一些思考和理解，做一些总结。
-开源软件是什么
-开源软件（OSS）是与源代码一">
+    <meta name="description" content="解决从github git clone速度慢的问题：
+只需要将 www.github.com/ 后面为代码库 改为
+www.github.com.cnpmjs.org/ 后面为代码库地址就可以实现一键式加速。
+设置git的缓存大小：
+git">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>关于开源的一点个人理解 | Antares-Wu&#39;s blog</title>
+    <title>little tricks | Antares-Wu&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -292,13 +294,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wu_lin_long/image/raw/master/featureimages/7.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wu_lin_long/image/raw/master/featureimages/qiguaidezhishizengjiale.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        关于开源的一点个人理解
+                        little tricks
                     </div>
                 </div>
             </div>
@@ -433,7 +435,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-01
+                    2020-05-20
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -447,14 +449,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    881
+                    112
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -470,14 +472,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>忽然想到要聊一聊开源，就写下这篇随笔，作为记录。<br>在上大学之前，我知道开源，但是这个词汇在我的生活里出现得还不多。进入大二以来，我逐渐更加了解开源，<br>我把我对开源软件的一些思考和理解，做一些总结。</p>
-<h1 id="开源软件是什么"><a href="#开源软件是什么" class="headerlink" title="开源软件是什么"></a>开源软件是什么</h1><blockquote>
-<p>开源软件（OSS）是与源代码一起分发的软件，可以由用户读取或修改。普遍开源软件应符合自由分发、源代码必须包含在程序中、任何人都必须能够修改源代码、可以重新分发源代码的修改版本等标准。</p>
-</blockquote>
-<p>开源软件到底是什么，是互不相识的程序员通过互联网，协作开发的免费软件吗？<br>那如果是免费软件，开发者的收益在哪里？只是做善事吗？</p>
-<h1 id="开源软件的收益在哪里"><a href="#开源软件的收益在哪里" class="headerlink" title="开源软件的收益在哪里"></a>开源软件的收益在哪里</h1><p>开发软件所需要的工程量往往是很大的，一个人没有足够的时间精力完成，而如果这个软件一般是程序员本人需要用的，或者是其他人需要用的，<br>这样，开发者将自己开发的软件，开源到社区，号召其他程序员帮助自己开发软件。<br>开发者开源的第一个收益，就是借助社区的力量，完成自己的作品，造福自己造福他人。<br>那有人问为什么不用已经发行的商业软件呢？首先商业软件不一定是免费的，其次商业软件的功能以及维护未必能达到用户的需求。<br>对于开发者来说，第二个收益就是在开源协作开发中磨练自己的能力，证明自己的实力。</p>
-<h1 id="开源软件战胜闭源软件"><a href="#开源软件战胜闭源软件" class="headerlink" title="开源软件战胜闭源软件"></a>开源软件战胜闭源软件</h1><p>软件公司开发商业软件，卖给企业和个人使用，并提供技术支持，这样的“软件卖钱”时代（模式），我认为已经过去了，或者说慢慢过去了。<br>在蓝海海域，有开源的地方，闭源的商业软件生长不出来。一定程度上说，计算机技术太复杂了，所以蓝海挺多的，很多琐碎的需求，难以提供一揽子服务，也助长了开源的环境。<br>在红海海域，商业软件比较成熟的地方，我认为开源会逐渐战胜闭源。有的闭源软件工程量太大，功能也比较完善，已经广泛运用，比如windows操作系统，matlab，我觉得不太可能被开源打败。在越来越多的领域，出现了功能强大的开源软件，足以替代商业软件。</p>
-<h1 id="开源和开源的竞争"><a href="#开源和开源的竞争" class="headerlink" title="开源和开源的竞争"></a>开源和开源的竞争</h1><p>随着越来越多的企业加入开源，有一种说法是，现在已经不是开源和闭源的竞争，而是开源和开源的竞争。这样竞争的收益是什么呢？<br>我个人的理解是：<br>1，开源软件竞争的是，技术标准的领导权。<br>2，开源软件竞争的是，平台的生态，用户规模和数据。<br>这也符合当下互联网经济的特点，有流量就有利润。为了迅速占领市场，让更多开发者和普通用户拥抱自家的软件（平台），企业不仅开放平台，甚至还让利。<br>可以预见未来开源和开源的竞争还会更加激烈。</p>
+                <p>解决从github git clone速度慢的问题：</p>
+<p>只需要将 <a href="http://www.github.com/" target="_blank" rel="noopener">www.github.com/</a> 后面为代码库 改为</p>
+<p><a href="http://www.github.com.cnpmjs.org/" target="_blank" rel="noopener">www.github.com.cnpmjs.org/</a> 后面为代码库地址就可以实现一键式加速。</p>
+<p>设置git的缓存大小：</p>
+<p>git config http.postBuffer 524288000</p>
+<p>filezilla：<br>开了代理是连接不上远程服务器的，除非手动设置一下代理服务器<br>用本机ssh连接虚拟机选用主机模式，上外网用NAT</p>
 
             </div>
             <hr />
@@ -636,9 +636,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《关于开源的一点个人理解》
+                    《little tricks》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/20/little-tricks/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Antares-Wu
             </a> 采用
@@ -678,9 +678,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'www.wulinlong.com/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/';
-        this.page.identifier = '/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/';
-        this.page.title = '关于开源的一点个人理解';
+        this.page.url = 'www.wulinlong.com/2020/05/20/little-tricks/';
+        this.page.identifier = '/2020/05/20/little-tricks/';
+        this.page.title = 'little tricks';
     };
     let disqus_shortname = '';
 
@@ -969,30 +969,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/03/xie-zai-kai-xue-zhi-qian/">
+                <a href="/2020/06/14/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/0.png" class="responsive-img" alt="写在开学之前">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/Leetcode_logo.png" class="responsive-img" alt="Leetcode996正方形数组的数目">
                         
-                        <span class="card-title">写在开学之前</span>
+                        <span class="card-title">Leetcode996正方形数组的数目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            漫长的寒假就快要结束了，开学在即。
+                            Leetcode solution
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-03
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                            <a href="/categories/Leetcode/" class="post-category" target="_blank">
+                                    Leetcode
                                 </a>
                             
                             
@@ -1002,8 +1002,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/Leetcode/" target="_blank">
+                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                 </div>
@@ -1014,45 +1014,44 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/">
+                <a href="/2020/05/15/birthday-problem/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/7.png" class="responsive-img" alt="关于开源的一点个人理解">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/概率论封面.jpg" class="responsive-img" alt="Birthday Problem">
                         
-                        <span class="card-title">关于开源的一点个人理解</span>
+                        <span class="card-title">Birthday Problem</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            忽然想到要聊一聊开源，就写下这篇随笔，作为记录。
+                            The probability of three or more people having the same birthday in a class
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                            <a href="/categories/programming-practice/" class="post-category" target="_blank">
+                                    programming practice
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/probability-theory/" target="_blank">
+                        <span class="chip bg-color">probability theory</span>
                     </a>
                     
                 </div>
@@ -1199,6 +1198,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
     <footer class="page-footer bg-color">
     <div class="container row center-align">

@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>I/O subsystem</title>
+      <link href="/2020/06/15/io-subsystem/"/>
+      <url>/2020/06/15/io-subsystem/</url>
+      
+        <content type="html"><![CDATA[<p>在vmware虚拟机MINIX3中在MINIX3 中安装一块100MB 大小的RAM 盘，可以挂载并且存取文件操作，虚拟机MINIX3硬盘基于ssd</p><p>测试RAM 和DISK 盘的文件读写速度，并分析读写速度有差异的原因。</p><p>第一步：增加RAM盘：<br>修改/usr/src/minix/drivers/storage/memory/memory.c ，增加默认的用户<br>RAM盘数：RAMDISKS=7。</p><p>重新编译内核，重启reboot。</p><p>创建设备mknod /dev/myram b 1 13，</p><p>/<em>mknod 的使用方式</em>/<br>mknod DEVNAME{b|c} MAJOR MINOR<br>DEVNAME 创建的设备文件名，这里为/dev/myram</p><p>b:块设备：系统从设备中读取数据的时候，直接从内存的buffer 中读取数据，而不经过磁盘。<br>MAJOR 和MINOR 表示主设备号和次设备号。</p><p>查看设备是否创建成功输入ls<br>/dev/ | grep ram。</p><p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615163107.jpg" alt="img"></p><p>实现buildmyram初始化工具（用于分配容量）。</p><ol><li>在/usr/src/minix/commands/目录下新建buildmyram 文件夹，<br>参照 /usr/src/minix/commands/ramdisk 文件增加buildmyram 也作为minix 的内置命令。</li><li>编写buildmyram.c 文件<br>类比ramdisk.c，修改<code>PATH</code>变量。<br>然后再buildmyram文件下新建Makefile，在commands目录下修改Makefile<br>编译buildmyram.c文件，即可将buildmyram作为新增对的commands内置命令</li></ol><p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615163208.jpg" alt="img"></p><p>在ram盘上创建内存文件系统：<br>mkfs.mfs /dev/myram</p><p>将ram盘挂载到用户目录下，mount /dev/myram /root/myram,查看是否挂在成功：输入df<br>提前在root下创建一个directory， myram</p><p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615163226.jpg" alt="img"></p><p>二、性能测试<br>性能测试的文件：</p><ol><li>多线程并发的同步读写</li><li>并发的数目要增加到设备接近“饱和“的状态，在出现饱和之前，总吞吐量随着并发数线性增长</li><li>性能测试的二个变量为“块大小”（推荐64B/256B/1KB/4KB/8KB）和“块扫描方式”（顺序/随机）可以画四张曲线图对比RAM盘和Disk盘性能（随机读，随机写，顺序读，顺序写）。实验结果预计为RAM盘性能高于DISK盘，特别是随机读写性能。</li></ol><p>在disk顺序写的情况下，blocksize为8192B的情况下，并发数和吞吐率的关系如下</p><p>blocksize    concurrency    per time    mBps<br>8192    1    0.0733    106.5825<br>8192    2    0.12915    60.49168<br>8192    3    0.082767    94.39187<br>8192    4    0.072075    108.394<br>8192    5    0.06366    122.7223<br>8192    6    0.060267    129.6322<br>8192    7    0.057143    136.7188<br>8192    8    0.058537    133.4615<br>8192    9    0.0624    125.2003<br>8192    10    0.05483    142.4859<br>8192    11    0.053182    146.9017<br>8192    12    0.176108    44.3619<br>8192    13    0.177046    44.12691</p><p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615165152.png" alt="img"></p><p>在并发达到12的时候开始有明显的clashing，所以综合考虑，在本次实验中选择并发数为10进行实验。</p><p>由于实验基于ssd，而且磁盘设置大小设置得比较小，只有100兆，受缓存的影响比较大，导致吞吐率过高。<br>写测试如下：<br>并发数    blocksize    ram顺序写    disk顺序写    ram随机写    disk随机写<br>10    64    12.207031    11.451249    7.629395    6.541817<br>10    128    22.194602    23.657037    15.590078    12.41814<br>10    256    40.690104    43.134386    29.919194    27.126736<br>10    512    75.120192    73.315503    59.838388    49.672558<br>10    1024    162.760417    91.609991    76.115549    102.796053<br>10    2048    300.480769    116.050208    165.099324    202.186853<br>10    4096    617.101106    134.698276    266.456344    172.38526<br>10    8192    976.5625    142.045455    426.213857    337.327288<br>很明显ram顺序写和随机写都比disk要快，由于是SSD，所以disk随机写的速度并不比ram随机写慢很多，而且有两个值还超过了ram随机写。值得注意的是disk的顺序写比disk的随机写要慢，实际上这是不符合逻辑的。</p><p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615165210.png" alt="img"></p><p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615165219.png" alt="img"></p><p>读测试如下：<br>并发数    blocksize    ram顺序读    disk顺序读    ram随机读    disk随机读<br>10    64    10.172526    13.097673    7.180607    6.781684<br>10    128    21.567193    25.273357    14.095879    13.824497<br>10    256    39.633218    48.828125    26.652907    27.648995<br>10    512    77.137638    94.628149    53.305813    54.253472<br>10    1024    172.53754    167.50643    97.65625    110.59598<br>10    2048    404.37371    244.14063    186.011905    209.338156<br>10    4096    868.05556    360.6879    344.770521    366.439962</p><p>可以发现ram顺序读比disk顺序读要快，但是ram随机读和disk随机读速度差不多。</p><p>  <img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615165231.png" alt="img"></p><p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615165247.png" alt="img"></p><ol><li><p>四、 总结</p><p>理论上，顺序读写比随机读写快，因为顺序不像随机一样，会造成大量的磁盘碎片。</p><p>RAM理论上读写性能好于机械硬盘，因为在机械硬盘中存在机械结构，读取和写入需要由磁头在转动的硬盘上寻找文件所在的扇区。在机械硬盘io的时候，寻道时间和旋转延迟非常影响硬盘速度。而SSD则运用了闪存技术，消除了机械结构，缩短了硬盘和RAM速度的差距，本次实验由于是在SSD上，所以差距体现并不如机械硬盘上明显。同时，缓存的大小对实验结果也有影响。这次实验结果偏高可能同时有ssd和缓存的影响，尤其是在磁盘设置100MB不是很大的情况下，缓存的影响相对就更大了，导致此次实验吞吐率偏高。</p></li></ol><p>   五、 改进建议</p><ol><li><p>建议增大磁盘的容量，至少1G以上，这样削弱缓存的影响。</p></li><li><p>每做一次读或者写的操作，就重新加载一次磁盘，避免缓存的影响。</p></li><li><p>判断读写测试函数的返回值，这样以免读写发生错误。</p></li><li><p>增大随机读写时rand（）函数的范围</p></li></ol><p>To be honest, there are a lot of difficulties during the experiment and I am not quite sure why the results did not meet expectations. I will leave it to the future when l have improved my knowledge and skills and then it will be appropriate to experiment it again.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> operating system </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> operating system </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode996正方形数组的数目</title>
+      <link href="/2020/06/14/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/"/>
+      <url>/2020/06/14/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/</url>
+      
+        <content type="html"><![CDATA[<p>‘’’<br>给定一个非负整数数组 A，如果该数组每对相邻元素之和是一个完全平方数，则称这一数组为正方形数组。</p><p>返回 A 的正方形排列的数目。两个排列 A1 和 A2 不同的充要条件是存在某个索引 i，使得 A1[i] != A2[i]。</p><p>示例 1：</p><p>输入：[1,17,8]<br>输出：2<br>解释：<br>[1,8,17] 和 [17,8,1] 都是有效的排列。<br>示例 2：</p><p>输入：[2,2,2]<br>输出：1</p><p>提示：</p><p>1 &lt;= A.length &lt;= 12<br>0 &lt;= A[i] &lt;= 1e9</p><p>‘’’</p><p>‘’’<br>这道题可以构造一张图，每个数作为一个节点，如果两个数加起来满足是一个完全平方数，就连一条边。<br>我们的目标就是求这张图的所有哈密顿路径，即经过图中所有点仅一次的路径。</p><p>‘’’</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">def</span> <span class="token function">numSquarefulPerms</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> A<span class="token punctuation">)</span><span class="token punctuation">:</span>        N <span class="token operator">=</span> len<span class="token punctuation">(</span>A<span class="token punctuation">)</span>        count <span class="token operator">=</span> collections<span class="token punctuation">.</span>Counter<span class="token punctuation">(</span>A<span class="token punctuation">)</span>        graph <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> count<span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">#把count中的元素x都保存成一个集合</span>        <span class="token keyword">for</span> x <span class="token keyword">in</span> count<span class="token punctuation">:</span>            <span class="token keyword">for</span> y <span class="token keyword">in</span> count<span class="token punctuation">:</span>                <span class="token keyword">if</span> int<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token punctuation">)</span><span class="token operator">**</span><span class="token punctuation">.</span><span class="token number">5</span> <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">==</span> x<span class="token operator">+</span>y<span class="token punctuation">:</span>                    graph<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>y<span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">#构造一个图，每个数作为一个节点，两个节点如果符合条件的话，就连一条边</span>        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> todo<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#dfs，传入两个参数，第一个参数是某个数，第二个参数是总长度减一</span>            count<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">-=</span><span class="token number">1</span>    <span class="token comment" spellcheck="true">#x的count减一，表示已经经历过一次这个数了，当然一个数字是可以重复次数的，count不一定是1</span>            <span class="token keyword">if</span> todo <span class="token operator">==</span> <span class="token number">0</span>    <span class="token comment" spellcheck="true">#如果todo是0的话，ans就置为1 ,作为递归终结的条件</span>                ans <span class="token operator">=</span> <span class="token number">1</span>                 <span class="token keyword">else</span><span class="token punctuation">:</span>                ans <span class="token operator">=</span> <span class="token number">0</span>     <span class="token comment" spellcheck="true">#如果todo不是0的话，ans置为0，防止递归的时候出错。</span>                <span class="token keyword">for</span> y <span class="token keyword">in</span> graph<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#对每个y in graph[x] ，即对每个x的临边</span>                    <span class="token keyword">if</span> count<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#如果count【y】不是0的话，即如果不是这个数都被遍历过一边的话</span>                        ans <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>y<span class="token punctuation">,</span> todo <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#就递归寻找路径，dfs的第一个参数是x相邻的y，第二个参数是todo-1</span>            count<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>    <span class="token comment" spellcheck="true">#回溯步骤，本来x设置为遍历过了，count【x】+1返回没有遍历的状态。</span>            <span class="token keyword">return</span> ans           <span class="token keyword">return</span> sum<span class="token punctuation">(</span>dfs<span class="token punctuation">(</span>x<span class="token punctuation">,</span> len<span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> count<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#对每个不重复的x开头的，求其通路的数目，再求和</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>little tricks</title>
+      <link href="/2020/05/20/little-tricks/"/>
+      <url>/2020/05/20/little-tricks/</url>
+      
+        <content type="html"><![CDATA[<p>解决从github git clone速度慢的问题：</p><p>只需要将 <a href="http://www.github.com/" target="_blank" rel="noopener">www.github.com/</a> 后面为代码库 改为</p><p><a href="http://www.github.com.cnpmjs.org/" target="_blank" rel="noopener">www.github.com.cnpmjs.org/</a> 后面为代码库地址就可以实现一键式加速。</p><p>设置git的缓存大小：</p><p>git config http.postBuffer 524288000</p><p>filezilla：<br>开了代理是连接不上远程服务器的，除非手动设置一下代理服务器<br>用本机ssh连接虚拟机选用主机模式，上外网用NAT</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Birthday Problem</title>
       <link href="/2020/05/15/birthday-problem/"/>
       <url>/2020/05/15/birthday-problem/</url>

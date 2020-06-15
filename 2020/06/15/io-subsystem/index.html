@@ -4,13 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="关于开源的一点个人理解, ECNU DaSE">
+    <meta name="keywords" content="I/O subsystem, ECNU DaSE">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="忽然想到要聊一聊开源，就写下这篇随笔，作为记录。在上大学之前，我知道开源，但是这个词汇在我的生活里出现得还不多。进入大二以来，我逐渐更加了解开源，我把我对开源软件的一些思考和理解，做一些总结。
-开源软件是什么
-开源软件（OSS）是与源代码一">
+    <meta name="description" content="在vmware虚拟机MINIX3中在MINIX3 中安装一块100MB 大小的RAM 盘，可以挂载并且存取文件操作，虚拟机MINIX3硬盘基于ssd
+测试RAM 和DISK 盘的文件读写速度，并分析读写速度有差异的原因。
+第一步：增加RAM">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>关于开源的一点个人理解 | Antares-Wu&#39;s blog</title>
+    <title>I/O subsystem | Antares-Wu&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -292,13 +292,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wu_lin_long/image/raw/master/featureimages/7.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        关于开源的一点个人理解
+                        I/O subsystem
                     </div>
                 </div>
             </div>
@@ -409,8 +409,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/随笔/" target="_blank">
-                            <span class="chip bg-color">随笔</span>
+                        <a href="/tags/operating-system/" target="_blank">
+                            <span class="chip bg-color">operating system</span>
                         </a>
                         
                     </div>
@@ -421,8 +421,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/随笔/" class="post-category" target="_blank">
-                            随笔
+                        <a href="/categories/operating-system/" class="post-category" target="_blank">
+                            operating system
                         </a>
                         
                     </div>
@@ -433,7 +433,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-01
+                    2020-06-15
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -447,14 +447,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    881
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
                 
@@ -470,14 +470,59 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>忽然想到要聊一聊开源，就写下这篇随笔，作为记录。<br>在上大学之前，我知道开源，但是这个词汇在我的生活里出现得还不多。进入大二以来，我逐渐更加了解开源，<br>我把我对开源软件的一些思考和理解，做一些总结。</p>
-<h1 id="开源软件是什么"><a href="#开源软件是什么" class="headerlink" title="开源软件是什么"></a>开源软件是什么</h1><blockquote>
-<p>开源软件（OSS）是与源代码一起分发的软件，可以由用户读取或修改。普遍开源软件应符合自由分发、源代码必须包含在程序中、任何人都必须能够修改源代码、可以重新分发源代码的修改版本等标准。</p>
-</blockquote>
-<p>开源软件到底是什么，是互不相识的程序员通过互联网，协作开发的免费软件吗？<br>那如果是免费软件，开发者的收益在哪里？只是做善事吗？</p>
-<h1 id="开源软件的收益在哪里"><a href="#开源软件的收益在哪里" class="headerlink" title="开源软件的收益在哪里"></a>开源软件的收益在哪里</h1><p>开发软件所需要的工程量往往是很大的，一个人没有足够的时间精力完成，而如果这个软件一般是程序员本人需要用的，或者是其他人需要用的，<br>这样，开发者将自己开发的软件，开源到社区，号召其他程序员帮助自己开发软件。<br>开发者开源的第一个收益，就是借助社区的力量，完成自己的作品，造福自己造福他人。<br>那有人问为什么不用已经发行的商业软件呢？首先商业软件不一定是免费的，其次商业软件的功能以及维护未必能达到用户的需求。<br>对于开发者来说，第二个收益就是在开源协作开发中磨练自己的能力，证明自己的实力。</p>
-<h1 id="开源软件战胜闭源软件"><a href="#开源软件战胜闭源软件" class="headerlink" title="开源软件战胜闭源软件"></a>开源软件战胜闭源软件</h1><p>软件公司开发商业软件，卖给企业和个人使用，并提供技术支持，这样的“软件卖钱”时代（模式），我认为已经过去了，或者说慢慢过去了。<br>在蓝海海域，有开源的地方，闭源的商业软件生长不出来。一定程度上说，计算机技术太复杂了，所以蓝海挺多的，很多琐碎的需求，难以提供一揽子服务，也助长了开源的环境。<br>在红海海域，商业软件比较成熟的地方，我认为开源会逐渐战胜闭源。有的闭源软件工程量太大，功能也比较完善，已经广泛运用，比如windows操作系统，matlab，我觉得不太可能被开源打败。在越来越多的领域，出现了功能强大的开源软件，足以替代商业软件。</p>
-<h1 id="开源和开源的竞争"><a href="#开源和开源的竞争" class="headerlink" title="开源和开源的竞争"></a>开源和开源的竞争</h1><p>随着越来越多的企业加入开源，有一种说法是，现在已经不是开源和闭源的竞争，而是开源和开源的竞争。这样竞争的收益是什么呢？<br>我个人的理解是：<br>1，开源软件竞争的是，技术标准的领导权。<br>2，开源软件竞争的是，平台的生态，用户规模和数据。<br>这也符合当下互联网经济的特点，有流量就有利润。为了迅速占领市场，让更多开发者和普通用户拥抱自家的软件（平台），企业不仅开放平台，甚至还让利。<br>可以预见未来开源和开源的竞争还会更加激烈。</p>
+                <p>在vmware虚拟机MINIX3中在MINIX3 中安装一块100MB 大小的RAM 盘，可以挂载并且存取文件操作，虚拟机MINIX3硬盘基于ssd</p>
+<p>测试RAM 和DISK 盘的文件读写速度，并分析读写速度有差异的原因。</p>
+<p>第一步：增加RAM盘：<br>修改/usr/src/minix/drivers/storage/memory/memory.c ，增加默认的用户<br>RAM盘数：RAMDISKS=7。</p>
+<p>重新编译内核，重启reboot。</p>
+<p>创建设备mknod /dev/myram b 1 13，</p>
+<p>/<em>mknod 的使用方式</em>/<br>mknod DEVNAME{b|c} MAJOR MINOR<br>DEVNAME 创建的设备文件名，这里为/dev/myram</p>
+<p>b:块设备：系统从设备中读取数据的时候，直接从内存的buffer 中读取数据，而不经过磁盘。<br>MAJOR 和MINOR 表示主设备号和次设备号。</p>
+<p>查看设备是否创建成功输入ls<br>/dev/ | grep ram。</p>
+<p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615163107.jpg" alt="img"></p>
+<p>实现buildmyram初始化工具（用于分配容量）。</p>
+<ol>
+<li>在/usr/src/minix/commands/目录下新建buildmyram 文件夹，<br>参照 /usr/src/minix/commands/ramdisk 文件增加buildmyram 也作为minix 的内置命令。</li>
+<li>编写buildmyram.c 文件<br>类比ramdisk.c，修改<code>PATH</code>变量。<br>然后再buildmyram文件下新建Makefile，在commands目录下修改Makefile<br>编译buildmyram.c文件，即可将buildmyram作为新增对的commands内置命令</li>
+</ol>
+<p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615163208.jpg" alt="img"></p>
+<p>在ram盘上创建内存文件系统：<br>mkfs.mfs /dev/myram</p>
+<p>将ram盘挂载到用户目录下，mount /dev/myram /root/myram,查看是否挂在成功：输入df<br>提前在root下创建一个directory， myram</p>
+<p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615163226.jpg" alt="img"></p>
+<p>二、性能测试<br>性能测试的文件：</p>
+<ol>
+<li>多线程并发的同步读写</li>
+<li>并发的数目要增加到设备接近“饱和“的状态，在出现饱和之前，总吞吐量随着并发数线性增长</li>
+<li>性能测试的二个变量为“块大小”（推荐64B/256B/1KB/4KB/8KB）和“块扫描方式”（顺序/随机）可以画四张曲线图对比RAM盘和Disk盘性能（随机读，随机写，顺序读，顺序写）。实验结果预计为RAM盘性能高于DISK盘，特别是随机读写性能。</li>
+</ol>
+<p>在disk顺序写的情况下，blocksize为8192B的情况下，并发数和吞吐率的关系如下</p>
+<p>blocksize    concurrency    per time    mBps<br>8192    1    0.0733    106.5825<br>8192    2    0.12915    60.49168<br>8192    3    0.082767    94.39187<br>8192    4    0.072075    108.394<br>8192    5    0.06366    122.7223<br>8192    6    0.060267    129.6322<br>8192    7    0.057143    136.7188<br>8192    8    0.058537    133.4615<br>8192    9    0.0624    125.2003<br>8192    10    0.05483    142.4859<br>8192    11    0.053182    146.9017<br>8192    12    0.176108    44.3619<br>8192    13    0.177046    44.12691</p>
+<p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615165152.png" alt="img"></p>
+<p>在并发达到12的时候开始有明显的clashing，所以综合考虑，在本次实验中选择并发数为10进行实验。</p>
+<p>由于实验基于ssd，而且磁盘设置大小设置得比较小，只有100兆，受缓存的影响比较大，导致吞吐率过高。<br>写测试如下：<br>并发数    blocksize    ram顺序写    disk顺序写    ram随机写    disk随机写<br>10    64    12.207031    11.451249    7.629395    6.541817<br>10    128    22.194602    23.657037    15.590078    12.41814<br>10    256    40.690104    43.134386    29.919194    27.126736<br>10    512    75.120192    73.315503    59.838388    49.672558<br>10    1024    162.760417    91.609991    76.115549    102.796053<br>10    2048    300.480769    116.050208    165.099324    202.186853<br>10    4096    617.101106    134.698276    266.456344    172.38526<br>10    8192    976.5625    142.045455    426.213857    337.327288<br>很明显ram顺序写和随机写都比disk要快，由于是SSD，所以disk随机写的速度并不比ram随机写慢很多，而且有两个值还超过了ram随机写。值得注意的是disk的顺序写比disk的随机写要慢，实际上这是不符合逻辑的。</p>
+<p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615165210.png" alt="img"></p>
+<p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615165219.png" alt="img"></p>
+<p>读测试如下：<br>并发数    blocksize    ram顺序读    disk顺序读    ram随机读    disk随机读<br>10    64    10.172526    13.097673    7.180607    6.781684<br>10    128    21.567193    25.273357    14.095879    13.824497<br>10    256    39.633218    48.828125    26.652907    27.648995<br>10    512    77.137638    94.628149    53.305813    54.253472<br>10    1024    172.53754    167.50643    97.65625    110.59598<br>10    2048    404.37371    244.14063    186.011905    209.338156<br>10    4096    868.05556    360.6879    344.770521    366.439962</p>
+<p>可以发现ram顺序读比disk顺序读要快，但是ram随机读和disk随机读速度差不多。</p>
+<p>  <img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615165231.png" alt="img"></p>
+<p><img src="https://gitee.com/wu_lin_long/image/raw/master/IO_subsystem/20200615165247.png" alt="img"></p>
+<ol>
+<li><p>四、 总结</p>
+<p>理论上，顺序读写比随机读写快，因为顺序不像随机一样，会造成大量的磁盘碎片。</p>
+<p>RAM理论上读写性能好于机械硬盘，因为在机械硬盘中存在机械结构，读取和写入需要由磁头在转动的硬盘上寻找文件所在的扇区。在机械硬盘io的时候，寻道时间和旋转延迟非常影响硬盘速度。而SSD则运用了闪存技术，消除了机械结构，缩短了硬盘和RAM速度的差距，本次实验由于是在SSD上，所以差距体现并不如机械硬盘上明显。同时，缓存的大小对实验结果也有影响。这次实验结果偏高可能同时有ssd和缓存的影响，尤其是在磁盘设置100MB不是很大的情况下，缓存的影响相对就更大了，导致此次实验吞吐率偏高。</p>
+</li>
+</ol>
+<p>   五、 改进建议</p>
+<ol>
+<li><p>建议增大磁盘的容量，至少1G以上，这样削弱缓存的影响。</p>
+</li>
+<li><p>每做一次读或者写的操作，就重新加载一次磁盘，避免缓存的影响。</p>
+</li>
+<li><p>判断读写测试函数的返回值，这样以免读写发生错误。</p>
+</li>
+<li><p>增大随机读写时rand（）函数的范围</p>
+</li>
+</ol>
+<p>To be honest, there are a lot of difficulties during the experiment and I am not quite sure why the results did not meet expectations. I will leave it to the future when l have improved my knowledge and skills and then it will be appropriate to experiment it again.</p>
 
             </div>
             <hr />
@@ -636,9 +681,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《关于开源的一点个人理解》
+                    《I/O subsystem》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/06/15/io-subsystem/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Antares-Wu
             </a> 采用
@@ -678,9 +723,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'www.wulinlong.com/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/';
-        this.page.identifier = '/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/';
-        this.page.title = '关于开源的一点个人理解';
+        this.page.url = 'www.wulinlong.com/2020/06/15/io-subsystem/';
+        this.page.identifier = '/2020/06/15/io-subsystem/';
+        this.page.title = 'I/O subsystem';
     };
     let disqus_shortname = '';
 
@@ -965,82 +1010,35 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/03/03/xie-zai-kai-xue-zhi-qian/">
+                <a href="/2020/06/15/io-subsystem/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/0.png" class="responsive-img" alt="写在开学之前">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png" class="responsive-img" alt="I/O subsystem">
                         
-                        <span class="card-title">写在开学之前</span>
+                        <span class="card-title">I/O subsystem</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            漫长的寒假就快要结束了，开学在即。
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-03
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/">
-                    <div class="card-image">
-                        
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/7.png" class="responsive-img" alt="关于开源的一点个人理解">
-                        
-                        <span class="card-title">关于开源的一点个人理解</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            忽然想到要聊一聊开源，就写下这篇随笔，作为记录。
+                            third course design for operating system
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                            <a href="/categories/operating-system/" class="post-category" target="_blank">
+                                    operating system
                                 </a>
                             
                             
@@ -1051,8 +1049,56 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/operating-system/" target="_blank">
+                        <span class="chip bg-color">operating system</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/14/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/Leetcode_logo.png" class="responsive-img" alt="Leetcode996正方形数组的数目">
+                        
+                        <span class="card-title">Leetcode996正方形数组的数目</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Leetcode solution
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Leetcode/" class="post-category" target="_blank">
+                                    Leetcode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Leetcode/" target="_blank">
+                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                 </div>

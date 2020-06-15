@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.wulinlong.com/"/>
-  <updated>2020-05-15T07:31:15.859Z</updated>
+  <updated>2020-06-15T09:07:03.749Z</updated>
   <id>www.wulinlong.com/</id>
   
   <author>
@@ -15,6 +15,88 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>I/O subsystem</title>
+    <link href="www.wulinlong.com/2020/06/15/io-subsystem/"/>
+    <id>www.wulinlong.com/2020/06/15/io-subsystem/</id>
+    <published>2020-06-15T05:41:23.000Z</published>
+    <updated>2020-06-15T09:07:03.749Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在vmware虚拟机MINIX3中在MINIX3 中安装一块100MB 大小的RAM 盘，可以挂载并且存取文件操作，虚拟机MINIX3硬盘基于ssd&lt;/p&gt;
+&lt;p&gt;测试RAM 和DISK
+        
+      
+    
+    </summary>
+    
+      <category term="operating system" scheme="www.wulinlong.com/categories/operating-system/"/>
+    
+    
+      <category term="operating system" scheme="www.wulinlong.com/tags/operating-system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode996正方形数组的数目</title>
+    <link href="www.wulinlong.com/2020/06/14/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/"/>
+    <id>www.wulinlong.com/2020/06/14/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/</id>
+    <published>2020-06-14T09:11:01.000Z</published>
+    <updated>2020-06-14T10:03:09.262Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;‘’’&lt;br&gt;给定一个非负整数数组 A，如果该数组每对相邻元素之和是一个完全平方数，则称这一数组为正方形数组。&lt;/p&gt;
+&lt;p&gt;返回 A 的正方形排列的数目。两个排列 A1 和 A2 不同的充要条件是存在某个索引 i，使得 A1[i] != A2[i]。&lt;/p&gt;
+&lt;p&gt;示例
+        
+      
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/categories/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>little tricks</title>
+    <link href="www.wulinlong.com/2020/05/20/little-tricks/"/>
+    <id>www.wulinlong.com/2020/05/20/little-tricks/</id>
+    <published>2020-05-20T08:52:36.000Z</published>
+    <updated>2020-06-15T05:16:25.991Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;解决从github git clone速度慢的问题：&lt;/p&gt;
+&lt;p&gt;只需要将 &lt;a href=&quot;http://www.github.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;www.github.com/&lt;/a&gt; 后面为代码库
+        
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="www.wulinlong.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="www.wulinlong.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>Birthday Problem</title>
