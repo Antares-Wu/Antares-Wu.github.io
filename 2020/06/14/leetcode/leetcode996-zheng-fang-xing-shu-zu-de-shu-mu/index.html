@@ -4,15 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Leetcode14最长公共前缀, ECNU DaSE">
+    <meta name="keywords" content="Leetcode996正方形数组的数目, ECNU DaSE">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="编写一个函数来查找字符串数组中的最长公共前缀。
-如果不存在公共前缀，返回空字符串 “”。
-示例 1:
-输入: [“flower”,”flow”,”flight”]输出: “fl”示例 2:
-输入: [“dog”,”racecar”,”car">
+    <meta name="description" content="‘’’给定一个非负整数数组 A，如果该数组每对相邻元素之和是一个完全平方数，则称这一数组为正方形数组。
+返回 A 的正方形排列的数目。两个排列 A1 和 A2 不同的充要条件是存在某个索引 i，使得 A1[i] != A2[i]。
+示例 1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Leetcode14最长公共前缀 | Antares-Wu&#39;s blog</title>
+    <title>Leetcode996正方形数组的数目 | Antares-Wu&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -300,7 +298,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Leetcode14最长公共前缀
+                        Leetcode996正方形数组的数目
                     </div>
                 </div>
             </div>
@@ -435,7 +433,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-06-14
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -449,14 +447,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    384
+                    556
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -472,33 +470,41 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>编写一个函数来查找字符串数组中的最长公共前缀。</p>
-<p>如果不存在公共前缀，返回空字符串 “”。</p>
-<p>示例 1:</p>
-<p>输入: [“flower”,”flow”,”flight”]<br>输出: “fl”<br>示例 2:</p>
-<p>输入: [“dog”,”racecar”,”car”]<br>输出: “”<br>解释: 输入不存在公共前缀。<br>说明:</p>
-<p>所有输入只包含小写字母 a-z 。</p>
-<p>题解：<br>python有两种解法利用了语言的特性，十分短小精悍。<br>我每次新看到一个python的语法特性的时候，我内心都要波动一会，这个语言怎么有那么多不讲道理的语法，怎么有那么多语法糖。高中vb语言，再加上大学一年c语言，感觉我的程序思维完全被vb和c语言塑造了。</p>
-<p>from xshura:<br>1、利用python的max()和min()，在Python里字符串是可以比较的，按照ascII值排，举例abb， aba，abac，最大为abb，最小为aba。所以只需要比较最大最小的公共前缀就是整个数组的公共前缀</p>
-<pre class="line-numbers language-python"><code class="language-python">    <span class="token keyword">def</span> <span class="token function">longestCommonPrefix</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> strs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> strs<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string">""</span>
-        s1 <span class="token operator">=</span> min<span class="token punctuation">(</span>strs<span class="token punctuation">)</span>
-        s2 <span class="token operator">=</span> max<span class="token punctuation">(</span>strs<span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i<span class="token punctuation">,</span>x <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> x <span class="token operator">!=</span> s2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> s2<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span>
-        <span class="token keyword">return</span> s1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>2、利用python的zip函数，把str看成list然后把输入看成二维数组，左对齐纵向压缩，然后把每项利用集合去重，之后遍历list中找到元素长度大于1之前的就是公共前缀</p>
-<pre class="line-numbers language-python"><code class="language-python">    <span class="token keyword">def</span> <span class="token function">longestCommonPrefix</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> strs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> strs<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string">""</span>
-        ss <span class="token operator">=</span> list<span class="token punctuation">(</span>map<span class="token punctuation">(</span>set<span class="token punctuation">,</span> zip<span class="token punctuation">(</span><span class="token operator">*</span>strs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        res <span class="token operator">=</span> <span class="token string">""</span>
-        <span class="token keyword">for</span> i<span class="token punctuation">,</span> x <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>ss<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            x <span class="token operator">=</span> list<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-            <span class="token keyword">if</span> len<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span>
-                <span class="token keyword">break</span>
-            res <span class="token operator">=</span> res <span class="token operator">+</span> x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <p>‘’’<br>给定一个非负整数数组 A，如果该数组每对相邻元素之和是一个完全平方数，则称这一数组为正方形数组。</p>
+<p>返回 A 的正方形排列的数目。两个排列 A1 和 A2 不同的充要条件是存在某个索引 i，使得 A1[i] != A2[i]。</p>
+<p>示例 1：</p>
+<p>输入：[1,17,8]<br>输出：2<br>解释：<br>[1,8,17] 和 [17,8,1] 都是有效的排列。<br>示例 2：</p>
+<p>输入：[2,2,2]<br>输出：1</p>
+<p>提示：</p>
+<p>1 &lt;= A.length &lt;= 12<br>0 &lt;= A[i] &lt;= 1e9</p>
+<p>‘’’</p>
+<p>‘’’<br>这道题可以构造一张图，每个数作为一个节点，如果两个数加起来满足是一个完全平方数，就连一条边。<br>我们的目标就是求这张图的所有哈密顿路径，即经过图中所有点仅一次的路径。</p>
+<p>‘’’</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+
+    <span class="token keyword">def</span> <span class="token function">numSquarefulPerms</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> A<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        N <span class="token operator">=</span> len<span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+        count <span class="token operator">=</span> collections<span class="token punctuation">.</span>Counter<span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+
+        graph <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> count<span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">#把count中的元素x都保存成一个集合</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> count<span class="token punctuation">:</span>
+            <span class="token keyword">for</span> y <span class="token keyword">in</span> count<span class="token punctuation">:</span>
+                <span class="token keyword">if</span> int<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token punctuation">)</span><span class="token operator">**</span><span class="token punctuation">.</span><span class="token number">5</span> <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">==</span> x<span class="token operator">+</span>y<span class="token punctuation">:</span>
+                    graph<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">#构造一个图，每个数作为一个节点，两个节点如果符合条件的话，就连一条边</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> todo<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#dfs，传入两个参数，第一个参数是某个数，第二个参数是总长度减一</span>
+            count<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">-=</span><span class="token number">1</span>    <span class="token comment" spellcheck="true">#x的count减一，表示已经经历过一次这个数了，当然一个数字是可以重复次数的，count不一定是1</span>
+            <span class="token keyword">if</span> todo <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#如果todo是0的话，ans就置为1 ,作为递归终结的条件</span>
+                ans <span class="token operator">=</span> <span class="token number">1</span>     
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                ans <span class="token operator">=</span> <span class="token number">0</span>     <span class="token comment" spellcheck="true">#如果todo不是0的话，ans置为0，防止递归的时候出错。</span>
+                <span class="token keyword">for</span> y <span class="token keyword">in</span> graph<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#对每个y in graph[x] ，即对每个x的临边</span>
+                    <span class="token keyword">if</span> count<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#如果count【y】不是0的话，即如果不是这个数都被遍历过一边的话</span>
+                        ans <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>y<span class="token punctuation">,</span> todo <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#就递归寻找路径，dfs的第一个参数是x相邻的y，第二个参数是todo-1</span>
+            count<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>    <span class="token comment" spellcheck="true">#回溯步骤，本来x设置为遍历过了，count【x】+1返回没有遍历的状态。</span>
+            <span class="token keyword">return</span> ans   
+
+        <span class="token keyword">return</span> sum<span class="token punctuation">(</span>dfs<span class="token punctuation">(</span>x<span class="token punctuation">,</span> len<span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> count<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#对每个不重复的x开头的，求其通路的数目，再求和</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -657,9 +663,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Leetcode14最长公共前缀》
+                    《Leetcode996正方形数组的数目》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/06/16/leetcode14-zui-chang-gong-gong-qian-zhui/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/06/14/leetcode/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Antares-Wu
             </a> 采用
@@ -699,9 +705,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'www.wulinlong.com/2020/06/16/leetcode14-zui-chang-gong-gong-qian-zhui/';
-        this.page.identifier = '/2020/06/16/leetcode14-zui-chang-gong-gong-qian-zhui/';
-        this.page.title = 'Leetcode14最长公共前缀';
+        this.page.url = 'www.wulinlong.com/2020/06/14/leetcode/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/';
+        this.page.identifier = '/2020/06/14/leetcode/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/';
+        this.page.title = 'Leetcode996正方形数组的数目';
     };
     let disqus_shortname = '';
 
@@ -990,23 +996,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/16/my-basic-shell/">
+                <a href="/2020/06/15/io-subsystem/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png" class="responsive-img" alt="My basic shell">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png" class="responsive-img" alt="I/O subsystem">
                         
-                        <span class="card-title">My basic shell</span>
+                        <span class="card-title">I/O subsystem</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            first course design for operating system
+                            third course design for operating system
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-16
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-15
                         </span>
                         <span class="publish-author">
                             
@@ -1038,30 +1044,30 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/15/io-subsystem/">
+                <a href="/2020/05/20/little-tricks/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png" class="responsive-img" alt="I/O subsystem">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/qiguaidezhishizengjiale.jpg" class="responsive-img" alt="little tricks">
                         
-                        <span class="card-title">I/O subsystem</span>
+                        <span class="card-title">little tricks</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            third course design for operating system
+                            little tricks I used in daily
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/operating-system/" class="post-category" target="_blank">
-                                    operating system
+                            <a href="/categories/随笔/" class="post-category" target="_blank">
+                                    随笔
                                 </a>
                             
                             
@@ -1071,8 +1077,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/operating-system/" target="_blank">
-                        <span class="chip bg-color">operating system</span>
+                    <a href="/tags/随笔/" target="_blank">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>
@@ -1234,7 +1240,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">11.5k</span>
+            <span class="white-color">14.3k</span>
             
 
             <br>

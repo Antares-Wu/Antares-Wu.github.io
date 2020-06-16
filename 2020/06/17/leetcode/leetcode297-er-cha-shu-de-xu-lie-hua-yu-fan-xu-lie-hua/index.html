@@ -4,15 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Leetcode14最长公共前缀, ECNU DaSE">
+    <meta name="keywords" content="Leetcode297二叉树的序列化与反序列化, ECNU DaSE">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="编写一个函数来查找字符串数组中的最长公共前缀。
-如果不存在公共前缀，返回空字符串 “”。
-示例 1:
-输入: [“flower”,”flow”,”flight”]输出: “fl”示例 2:
-输入: [“dog”,”racecar”,”car">
+    <meta name="description" content="序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。
+请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Leetcode14最长公共前缀 | Antares-Wu&#39;s blog</title>
+    <title>Leetcode297二叉树的序列化与反序列化 | Antares-Wu&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -300,7 +297,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Leetcode14最长公共前缀
+                        Leetcode297二叉树的序列化与反序列化
                     </div>
                 </div>
             </div>
@@ -435,7 +432,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-06-17
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -449,14 +446,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    384
+                    643
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -472,33 +469,60 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>编写一个函数来查找字符串数组中的最长公共前缀。</p>
-<p>如果不存在公共前缀，返回空字符串 “”。</p>
-<p>示例 1:</p>
-<p>输入: [“flower”,”flow”,”flight”]<br>输出: “fl”<br>示例 2:</p>
-<p>输入: [“dog”,”racecar”,”car”]<br>输出: “”<br>解释: 输入不存在公共前缀。<br>说明:</p>
-<p>所有输入只包含小写字母 a-z 。</p>
-<p>题解：<br>python有两种解法利用了语言的特性，十分短小精悍。<br>我每次新看到一个python的语法特性的时候，我内心都要波动一会，这个语言怎么有那么多不讲道理的语法，怎么有那么多语法糖。高中vb语言，再加上大学一年c语言，感觉我的程序思维完全被vb和c语言塑造了。</p>
-<p>from xshura:<br>1、利用python的max()和min()，在Python里字符串是可以比较的，按照ascII值排，举例abb， aba，abac，最大为abb，最小为aba。所以只需要比较最大最小的公共前缀就是整个数组的公共前缀</p>
-<pre class="line-numbers language-python"><code class="language-python">    <span class="token keyword">def</span> <span class="token function">longestCommonPrefix</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> strs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> strs<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string">""</span>
-        s1 <span class="token operator">=</span> min<span class="token punctuation">(</span>strs<span class="token punctuation">)</span>
-        s2 <span class="token operator">=</span> max<span class="token punctuation">(</span>strs<span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i<span class="token punctuation">,</span>x <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> x <span class="token operator">!=</span> s2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> s2<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span>
-        <span class="token keyword">return</span> s1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>2、利用python的zip函数，把str看成list然后把输入看成二维数组，左对齐纵向压缩，然后把每项利用集合去重，之后遍历list中找到元素长度大于1之前的就是公共前缀</p>
-<pre class="line-numbers language-python"><code class="language-python">    <span class="token keyword">def</span> <span class="token function">longestCommonPrefix</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> strs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> strs<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string">""</span>
-        ss <span class="token operator">=</span> list<span class="token punctuation">(</span>map<span class="token punctuation">(</span>set<span class="token punctuation">,</span> zip<span class="token punctuation">(</span><span class="token operator">*</span>strs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        res <span class="token operator">=</span> <span class="token string">""</span>
-        <span class="token keyword">for</span> i<span class="token punctuation">,</span> x <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>ss<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            x <span class="token operator">=</span> list<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-            <span class="token keyword">if</span> len<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span>
-                <span class="token keyword">break</span>
-            res <span class="token operator">=</span> res <span class="token operator">+</span> x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <p>序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。</p>
+<p>请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。</p>
+<p>示例: </p>
+<p>你可以将以下二叉树：</p>
+<p>​    1</p>
+<p>   / <br>  2   3<br>     / <br>    4   5</p>
+<p>序列化为 “[1,2,3,null,null,4,5]”<br>提示: 这与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。</p>
+<p>说明: 不要使用类的成员 / 全局 / 静态变量来存储状态，你的序列化和反序列化算法应该是无状态的。</p>
+<p>用到的一个if else的三元表达式可参考：<br><a href="https://www.cnblogs.com/caizhao/p/7905094.html" target="_blank" rel="noopener">https://www.cnblogs.com/caizhao/p/7905094.html</a></p>
+<p>from 突突突废柴要努力啦：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.left = None</span>
+<span class="token comment" spellcheck="true">#         self.right = None</span>
+
+
+<span class="token keyword">def</span> <span class="token function">serialize</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#序列化，传入参数：这个二叉树</span>
+
+    s <span class="token operator">=</span> <span class="token string">""</span>  <span class="token comment" spellcheck="true">#先将置为空字符串</span>
+    queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#将queue置为空列表，即构造一个队列</span>
+    queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#将这个二叉树加入队列</span>
+    <span class="token keyword">while</span> queue<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#如果queue不为空的话</span>
+        root <span class="token operator">=</span> queue<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#root赋值为队头，队头弹出</span>
+        <span class="token keyword">if</span> root<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#如果root不为空的话</span>
+            s <span class="token operator">+=</span> str<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#s附加root.val</span>
+            queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#左子树入队列</span>
+            queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#右子树入队列</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#如果root为空的话</span>
+            s <span class="token operator">+=</span> <span class="token string">"n"</span>  <span class="token comment" spellcheck="true">#s附加n</span>
+        s <span class="token operator">+=</span> <span class="token string">" "</span>    <span class="token comment" spellcheck="true">#s附加" "</span>
+    <span class="token keyword">return</span> s
+
+<span class="token keyword">def</span> <span class="token function">deserialize</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#反序列化，传入参数：这个序列</span>
+
+    tree <span class="token operator">=</span> data<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#将数据分片</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#stdout</span>
+    <span class="token keyword">if</span> tree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"n"</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#如果第一个是n，即上面在序列化函数中传入的n</span>
+        <span class="token keyword">return</span> None  <span class="token comment" spellcheck="true">#返回none</span>
+    queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#空队列</span>
+    root <span class="token operator">=</span> TreeNode<span class="token punctuation">(</span>int<span class="token punctuation">(</span>tree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#定义root，为treenode这个object，传入参数</span>
+    queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#root入队列</span>
+    i <span class="token operator">=</span> <span class="token number">1</span> 
+    <span class="token keyword">while</span> queue<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#当队列不为0时</span>
+        cur <span class="token operator">=</span> queue<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#当前节点为队首节点</span>
+        <span class="token keyword">if</span> cur <span class="token operator">==</span> None<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#如果当前节点为空，就继续循环</span>
+            <span class="token keyword">continue</span>
+        cur<span class="token punctuation">.</span>left <span class="token operator">=</span> TreeNode<span class="token punctuation">(</span>int<span class="token punctuation">(</span>tree<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">if</span> tree<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"n"</span> <span class="token keyword">else</span> None  
+        cur<span class="token punctuation">.</span>right <span class="token operator">=</span> TreeNode<span class="token punctuation">(</span>int<span class="token punctuation">(</span>tree<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">if</span> tree<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"n"</span> <span class="token keyword">else</span> None
+        i <span class="token operator">+=</span> <span class="token number">2</span>
+        queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+        queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -657,9 +681,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Leetcode14最长公共前缀》
+                    《Leetcode297二叉树的序列化与反序列化》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/06/16/leetcode14-zui-chang-gong-gong-qian-zhui/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/06/17/leetcode/leetcode297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-lie-hua/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Antares-Wu
             </a> 采用
@@ -699,9 +723,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'www.wulinlong.com/2020/06/16/leetcode14-zui-chang-gong-gong-qian-zhui/';
-        this.page.identifier = '/2020/06/16/leetcode14-zui-chang-gong-gong-qian-zhui/';
-        this.page.title = 'Leetcode14最长公共前缀';
+        this.page.url = 'www.wulinlong.com/2020/06/17/leetcode/leetcode297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-lie-hua/';
+        this.page.identifier = '/2020/06/17/leetcode/leetcode297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-lie-hua/';
+        this.page.title = 'Leetcode297二叉树的序列化与反序列化';
     };
     let disqus_shortname = '';
 
@@ -990,23 +1014,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/16/my-basic-shell/">
+                <a href="/2020/06/17/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png" class="responsive-img" alt="My basic shell">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png" class="responsive-img" alt="chrt system call and EDF near real-time scheduling">
                         
-                        <span class="card-title">My basic shell</span>
+                        <span class="card-title">chrt system call and EDF near real-time scheduling</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            first course design for operating system
+                            second course design for operating system
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-16
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-17
                         </span>
                         <span class="publish-author">
                             
@@ -1038,23 +1062,23 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/15/io-subsystem/">
+                <a href="/2020/06/16/my-basic-shell/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png" class="responsive-img" alt="I/O subsystem">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png" class="responsive-img" alt="My basic shell">
                         
-                        <span class="card-title">I/O subsystem</span>
+                        <span class="card-title">My basic shell</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            third course design for operating system
+                            first course design for operating system
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-16
                             </span>
                         <span class="publish-author">
                             
@@ -1234,7 +1258,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">11.5k</span>
+            <span class="white-color">14.3k</span>
             
 
             <br>

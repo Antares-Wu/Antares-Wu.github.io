@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.wulinlong.com/"/>
-  <updated>2020-06-15T17:31:35.644Z</updated>
+  <updated>2020-06-16T19:48:45.399Z</updated>
   <id>www.wulinlong.com/</id>
   
   <author>
@@ -17,9 +17,93 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>chrt system call and EDF near real-time scheduling</title>
+    <link href="www.wulinlong.com/2020/06/17/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/"/>
+    <id>www.wulinlong.com/2020/06/17/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/</id>
+    <published>2020-06-16T19:20:32.000Z</published>
+    <updated>2020-06-16T19:48:45.399Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一、    &lt;strong&gt;目的&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在MINIX3中实现Earliest-Deadline-First近似实时调度功能。&lt;/p&gt;
+&lt;p&gt;二、    &lt;strong&gt;内容与设计思想&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;\1.
+        
+      
+    
+    </summary>
+    
+      <category term="operating system" scheme="www.wulinlong.com/categories/operating-system/"/>
+    
+    
+      <category term="operating system" scheme="www.wulinlong.com/tags/operating-system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode297二叉树的序列化与反序列化</title>
+    <link href="www.wulinlong.com/2020/06/17/leetcode/leetcode297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-lie-hua/"/>
+    <id>www.wulinlong.com/2020/06/17/leetcode/leetcode297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-lie-hua/</id>
+    <published>2020-06-16T19:06:01.000Z</published>
+    <updated>2020-06-16T19:19:38.597Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。&lt;/p&gt;
+&lt;p&gt;请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 /
+        
+      
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/categories/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My basic shell</title>
+    <link href="www.wulinlong.com/2020/06/16/my-basic-shell/"/>
+    <id>www.wulinlong.com/2020/06/16/my-basic-shell/</id>
+    <published>2020-06-16T10:26:38.000Z</published>
+    <updated>2020-06-16T12:09:27.275Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在minix3下实现一个基本的shell，能解析的命令如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;带参数的程序运行功能。&lt;br&gt;program arg1 arg2 …
+        
+      
+    
+    </summary>
+    
+      <category term="operating system" scheme="www.wulinlong.com/categories/operating-system/"/>
+    
+    
+      <category term="operating system" scheme="www.wulinlong.com/tags/operating-system/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Leetcode14最长公共前缀</title>
-    <link href="www.wulinlong.com/2020/06/16/leetcode14-zui-chang-gong-gong-qian-zhui/"/>
-    <id>www.wulinlong.com/2020/06/16/leetcode14-zui-chang-gong-gong-qian-zhui/</id>
+    <link href="www.wulinlong.com/2020/06/16/leetcode/leetcode14-zui-chang-gong-gong-qian-zhui/"/>
+    <id>www.wulinlong.com/2020/06/16/leetcode/leetcode14-zui-chang-gong-gong-qian-zhui/</id>
     <published>2020-06-15T16:51:19.000Z</published>
     <updated>2020-06-15T17:31:35.644Z</updated>
     
@@ -75,8 +159,8 @@
   
   <entry>
     <title>Leetcode996正方形数组的数目</title>
-    <link href="www.wulinlong.com/2020/06/14/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/"/>
-    <id>www.wulinlong.com/2020/06/14/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/</id>
+    <link href="www.wulinlong.com/2020/06/14/leetcode/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/"/>
+    <id>www.wulinlong.com/2020/06/14/leetcode/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/</id>
     <published>2020-06-14T09:11:01.000Z</published>
     <updated>2020-06-15T16:33:37.734Z</updated>
     
