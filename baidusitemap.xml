@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>www.wulinlong.com/2020/06/17/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/</loc>
+    <loc>www.wulinlong.com/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/</loc>
+    <lastmod>2020-06-18</lastmod>
+  </url>  <url>
+    <loc>www.wulinlong.com/2020/06/19/mushroom-classification/</loc>
+    <lastmod>2020-06-18</lastmod>
+  </url>  <url>
+    <loc>www.wulinlong.com/2020/06/19/leetcode/leetcode125-yan-zheng-hui-wen-chuan/</loc>
+    <lastmod>2020-06-18</lastmod>
+  </url>  <url>
+    <loc>www.wulinlong.com/2020/06/18/leetcode/leetcode1028-cong-xian-xu-bian-li-huan-yuan-er-cha-shu/</loc>
+    <lastmod>2020-06-18</lastmod>
+  </url>  <url>
+    <loc>www.wulinlong.com/2020/06/18/leetcode/leetcode1014-zui-jia-guan-guang-zu-he/</loc>
+    <lastmod>2020-06-18</lastmod>
+  </url>  <url>
+    <loc>www.wulinlong.com/2020/06/17/operating-system/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/</loc>
     <lastmod>2020-06-16</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/06/17/leetcode/leetcode297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-lie-hua/</loc>
     <lastmod>2020-06-16</lastmod>
   </url>  <url>
-    <loc>www.wulinlong.com/2020/06/16/my-basic-shell/</loc>
+    <loc>www.wulinlong.com/2020/06/16/operating-system/my-basic-shell/</loc>
     <lastmod>2020-06-16</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/06/16/leetcode/leetcode14-zui-chang-gong-gong-qian-zhui/</loc>
@@ -16,7 +31,7 @@
     <loc>www.wulinlong.com/2020/06/14/leetcode/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/</loc>
     <lastmod>2020-06-15</lastmod>
   </url>  <url>
-    <loc>www.wulinlong.com/2020/06/15/io-subsystem/</loc>
+    <loc>www.wulinlong.com/2020/06/15/operating-system/io-subsystem/</loc>
     <lastmod>2020-06-15</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/05/20/little-tricks/</loc>
@@ -41,9 +56,6 @@
     <lastmod>2020-04-13</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/03/03/xie-zai-kai-xue-zhi-qian/</loc>
-    <lastmod>2020-04-13</lastmod>
-  </url>  <url>
-    <loc>www.wulinlong.com/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/</loc>
     <lastmod>2020-04-13</lastmod>
   </url>
 </urlset>

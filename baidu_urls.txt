@@ -1,8 +1,12 @@
-www.wulinlong.com/2020/06/17/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/
+www.wulinlong.com/2020/06/19/mushroom-classification/
+www.wulinlong.com/2020/06/19/leetcode/leetcode125-yan-zheng-hui-wen-chuan/
+www.wulinlong.com/2020/06/18/leetcode/leetcode1028-cong-xian-xu-bian-li-huan-yuan-er-cha-shu/
+www.wulinlong.com/2020/06/18/leetcode/leetcode1014-zui-jia-guan-guang-zu-he/
+www.wulinlong.com/2020/06/17/operating-system/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/
 www.wulinlong.com/2020/06/17/leetcode/leetcode297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-lie-hua/
-www.wulinlong.com/2020/06/16/my-basic-shell/
+www.wulinlong.com/2020/06/16/operating-system/my-basic-shell/
 www.wulinlong.com/2020/06/16/leetcode/leetcode14-zui-chang-gong-gong-qian-zhui/
-www.wulinlong.com/2020/06/15/io-subsystem/
+www.wulinlong.com/2020/06/15/operating-system/io-subsystem/
 www.wulinlong.com/2020/06/14/leetcode/leetcode996-zheng-fang-xing-shu-zu-de-shu-mu/
 www.wulinlong.com/2020/05/20/little-tricks/
 www.wulinlong.com/2020/05/15/birthday-problem/

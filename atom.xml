@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.wulinlong.com/"/>
-  <updated>2020-06-16T19:48:45.399Z</updated>
+  <updated>2020-06-18T18:50:01.028Z</updated>
   <id>www.wulinlong.com/</id>
   
   <author>
@@ -17,9 +17,117 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mushroom_Classification</title>
+    <link href="www.wulinlong.com/2020/06/19/mushroom-classification/"/>
+    <id>www.wulinlong.com/2020/06/19/mushroom-classification/</id>
+    <published>2020-06-18T18:44:11.000Z</published>
+    <updated>2020-06-18T18:50:01.028Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本次作业名称：Neural Network Practice 作业内容：本次作业主要是希望通过实践，加深大家对于神经网络的理解。作业的数据集：Mushroom Classification data
+        
+      
+    
+    </summary>
+    
+      <category term="deep learning" scheme="www.wulinlong.com/categories/deep-learning/"/>
+    
+    
+      <category term="deep learning" scheme="www.wulinlong.com/tags/deep-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode125验证回文串</title>
+    <link href="www.wulinlong.com/2020/06/19/leetcode/leetcode125-yan-zheng-hui-wen-chuan/"/>
+    <id>www.wulinlong.com/2020/06/19/leetcode/leetcode125-yan-zheng-hui-wen-chuan/</id>
+    <published>2020-06-18T16:44:31.000Z</published>
+    <updated>2020-06-18T18:26:03.350Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;From Leetcode:&lt;/p&gt;
+&lt;p&gt;让字符串字母都变成小写，然后只保留字母和数字，翻转，比较得到结果&lt;/p&gt;
+&lt;p&gt;#感觉python的条件，循环语句已经十分接近自然语言了&lt;/p&gt;
+&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/categories/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode1028从先序遍历还原二叉树</title>
+    <link href="www.wulinlong.com/2020/06/18/leetcode/leetcode1028-cong-xian-xu-bian-li-huan-yuan-er-cha-shu/"/>
+    <id>www.wulinlong.com/2020/06/18/leetcode/leetcode1028-cong-xian-xu-bian-li-huan-yuan-er-cha-shu/</id>
+    <published>2020-06-18T12:16:48.000Z</published>
+    <updated>2020-06-18T16:41:42.910Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;由于是先序遍历，所以如果顺序遍历其结果，如果出现一个新的node，那必然是上一层最后一个node的左子树或者右子树。&lt;br&gt;所以通过计数计算出节点的深度的时候，判断其是为左子树还是右子树。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/categories/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode1014最佳观光组合</title>
+    <link href="www.wulinlong.com/2020/06/18/leetcode/leetcode1014-zui-jia-guan-guang-zu-he/"/>
+    <id>www.wulinlong.com/2020/06/18/leetcode/leetcode1014-zui-jia-guan-guang-zu-he/</id>
+    <published>2020-06-18T12:07:19.000Z</published>
+    <updated>2020-06-18T12:15:25.028Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;给定正整数数组 &lt;code&gt;A&lt;/code&gt;，&lt;code&gt;A[i]&lt;/code&gt; 表示第 &lt;code&gt;i&lt;/code&gt; 个观光景点的评分，并且两个景点 &lt;code&gt;i&lt;/code&gt; 和 &lt;code&gt;j&lt;/code&gt; 之间的距离为 &lt;code&gt;j -
+        
+      
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/categories/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>chrt system call and EDF near real-time scheduling</title>
-    <link href="www.wulinlong.com/2020/06/17/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/"/>
-    <id>www.wulinlong.com/2020/06/17/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/</id>
+    <link href="www.wulinlong.com/2020/06/17/operating-system/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/"/>
+    <id>www.wulinlong.com/2020/06/17/operating-system/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/</id>
     <published>2020-06-16T19:20:32.000Z</published>
     <updated>2020-06-16T19:48:45.399Z</updated>
     
@@ -74,8 +182,8 @@
   
   <entry>
     <title>My basic shell</title>
-    <link href="www.wulinlong.com/2020/06/16/my-basic-shell/"/>
-    <id>www.wulinlong.com/2020/06/16/my-basic-shell/</id>
+    <link href="www.wulinlong.com/2020/06/16/operating-system/my-basic-shell/"/>
+    <id>www.wulinlong.com/2020/06/16/operating-system/my-basic-shell/</id>
     <published>2020-06-16T10:26:38.000Z</published>
     <updated>2020-06-16T12:09:27.275Z</updated>
     
@@ -132,8 +240,8 @@
   
   <entry>
     <title>I/O subsystem</title>
-    <link href="www.wulinlong.com/2020/06/15/io-subsystem/"/>
-    <id>www.wulinlong.com/2020/06/15/io-subsystem/</id>
+    <link href="www.wulinlong.com/2020/06/15/operating-system/io-subsystem/"/>
+    <id>www.wulinlong.com/2020/06/15/operating-system/io-subsystem/</id>
     <published>2020-06-15T05:41:23.000Z</published>
     <updated>2020-06-15T09:07:03.749Z</updated>
     
@@ -399,7 +507,7 @@
     <link href="www.wulinlong.com/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/"/>
     <id>www.wulinlong.com/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/</id>
     <published>2020-03-01T11:54:09.000Z</published>
-    <updated>2020-04-13T12:32:20.810Z</updated>
+    <updated>2020-06-18T19:03:11.242Z</updated>
     
     <summary type="html">
     
@@ -407,8 +515,8 @@
       
         
         
-          &lt;p&gt;忽然想到要聊一聊开源，就写下这篇随笔，作为记录。&lt;br&gt;在上大学之前，我知道开源，但是这个词汇在我的生活里出现得还不多。进入大二以来，我逐渐更加了解开源，&lt;br&gt;我把我对开源软件的一些思考和理解，做一些总结。&lt;/p&gt;
-&lt;h1 id=&quot;开源软件是什么&quot;&gt;&lt;a
+          &lt;blockquote&gt;
+&lt;p&gt;2020/6/19
         
       
     
