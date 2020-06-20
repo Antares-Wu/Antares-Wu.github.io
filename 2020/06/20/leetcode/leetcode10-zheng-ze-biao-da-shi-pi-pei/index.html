@@ -4,12 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Leetcode297二叉树的序列化与反序列化, ECNU DaSE">
+    <meta name="keywords" content="Leetcode10正则表达式匹配, ECNU DaSE">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。
-请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列">
+    <meta name="description" content="给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 ‘.’ 和 ‘*’ 的正则表达式匹配。
+‘.’ 匹配任意单个字符‘*’ 匹配零个或多个前面的那一个元素所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。
+说明:
+s 可能为">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Leetcode297二叉树的序列化与反序列化 | Antares-Wu&#39;s blog</title>
+    <title>Leetcode10正则表达式匹配 | Antares-Wu&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -297,7 +299,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Leetcode297二叉树的序列化与反序列化
+                        Leetcode10正则表达式匹配
                     </div>
                 </div>
             </div>
@@ -432,7 +434,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-17
+                    2020-06-20
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -446,14 +448,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    643
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
                 
@@ -469,60 +471,98 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。</p>
-<p>请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。</p>
-<p>示例: </p>
-<p>你可以将以下二叉树：</p>
-<p>​    1</p>
-<p>   / <br>  2   3<br>     / <br>    4   5</p>
-<p>序列化为 “[1,2,3,null,null,4,5]”<br>提示: 这与 LeetCode 目前使用的方式一致，详情请参阅 LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。</p>
-<p>说明: 不要使用类的成员 / 全局 / 静态变量来存储状态，你的序列化和反序列化算法应该是无状态的。</p>
-<p>用到的一个if else的三元表达式可参考：<br><a href="https://www.cnblogs.com/caizhao/p/7905094.html" target="_blank" rel="noopener">https://www.cnblogs.com/caizhao/p/7905094.html</a></p>
-<p>from 突突突废柴要努力啦：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
-<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.left = None</span>
-<span class="token comment" spellcheck="true">#         self.right = None</span>
+                <p>给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 ‘.’ 和 ‘*’ 的正则表达式匹配。</p>
+<p>‘.’ 匹配任意单个字符<br>‘*’ 匹配零个或多个前面的那一个元素<br>所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。</p>
+<p>说明:</p>
+<p>s 可能为空，且只包含从 a-z 的小写字母。<br>p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。<br>示例 1:</p>
+<p>输入:<br>s = “aa”<br>p = “a”<br>输出: false<br>解释: “a” 无法匹配 “aa” 整个字符串。<br>示例 2:</p>
+<p>输入:<br>s = “aa”<br>p = “a<em>“<br>输出: true<br>解释: 因为 ‘</em>‘ 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 ‘a’。因此，字符串 “aa” 可被视为 ‘a’ 重复了一次。<br>示例 3:</p>
+<p>输入:<br>s = “ab”<br>p = “.<em>“<br>输出: true<br>解释: “.</em>“ 表示可匹配零个或多个（’*’）任意字符（’.’）。<br>示例 4:</p>
+<p>输入:<br>s = “aab”<br>p = “c<em>a</em>b”<br>输出: true<br>解释: 因为 ‘*’ 表示零个或多个，这里 ‘c’ 为 0 个, ‘a’ 被重复一次。因此可以匹配字符串 “aab”。<br>示例 5:</p>
+<p>输入:<br>s = “mississippi”<br>p = “mis<em>is</em>p*.”<br>输出: false</p>
+<p>leetcode官方题解给出的是动态规划，空间复杂度太高了。我感觉可以直接遍历两个字符串，但是没看到有题解是这么写的，但是有一种递归遍历的方式，时间复杂度也是平方项，空间复杂度就变成线性的了，非常好，值得学习。另外我觉得动态规划可能不适合这类题目，因为矩阵太稀疏了。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isMatch</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">,</span> p<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
+        m<span class="token punctuation">,</span> n <span class="token operator">=</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>p<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#初始化m，n为s，p的长度</span>
 
+        <span class="token keyword">def</span> <span class="token function">matches</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> int<span class="token punctuation">,</span> j<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#定义match函数，传入两个整数参数i和j</span>
+            <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#如果i是0的话</span>
+                <span class="token keyword">return</span> <span class="token boolean">False</span> <span class="token comment" spellcheck="true">#返回false</span>
+            <span class="token keyword">if</span> p<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'.'</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#如果p的第j个字符是'.'</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span> f <span class="token comment" spellcheck="true">#返回true</span>
+            <span class="token keyword">return</span> s<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> p<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#返回s的第i个值和p的第j个值是不是相等</span>
 
-<span class="token keyword">def</span> <span class="token function">serialize</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#序列化，传入参数：这个二叉树</span>
+        f <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#构造矩阵</span>
+        f<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>m <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> p<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">:</span>
+                    f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">|</span><span class="token operator">=</span> f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true">#用位运算来赋值</span>
+                    <span class="token keyword">if</span> matches<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                        f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">|</span><span class="token operator">=</span> f<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> matches<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                        f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">|</span><span class="token operator">=</span> f<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> f<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>python的递归解法</p>
+<p>from dz-lee:</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isMatch</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">,</span> p<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> p<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token operator">not</span> s  <span class="token comment" spellcheck="true"># 结束条件，如果p为空的时候，s是否为空</span>
 
-    s <span class="token operator">=</span> <span class="token string">""</span>  <span class="token comment" spellcheck="true">#先将置为空字符串</span>
-    queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#将queue置为空列表，即构造一个队列</span>
-    queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#将这个二叉树加入队列</span>
-    <span class="token keyword">while</span> queue<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#如果queue不为空的话</span>
-        root <span class="token operator">=</span> queue<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#root赋值为队头，队头弹出</span>
-        <span class="token keyword">if</span> root<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#如果root不为空的话</span>
-            s <span class="token operator">+=</span> str<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#s附加root.val</span>
-            queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#左子树入队列</span>
-            queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#右子树入队列</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#如果root为空的话</span>
-            s <span class="token operator">+=</span> <span class="token string">"n"</span>  <span class="token comment" spellcheck="true">#s附加n</span>
-        s <span class="token operator">+=</span> <span class="token string">" "</span>    <span class="token comment" spellcheck="true">#s附加" "</span>
-    <span class="token keyword">return</span> s
+        first_match <span class="token operator">=</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">and</span> p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">in</span> <span class="token punctuation">{</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">#如果有星号的情况</span>
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">>=</span><span class="token number">2</span> <span class="token operator">and</span> p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 返回 匹配0个 | 多个</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>isMatch<span class="token punctuation">(</span>s<span class="token punctuation">,</span> p<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">or</span> <span class="token punctuation">(</span>first_match <span class="token operator">and</span> self<span class="token punctuation">.</span>isMatch<span class="token punctuation">(</span>s<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<span class="token keyword">def</span> <span class="token function">deserialize</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#反序列化，传入参数：这个序列</span>
-
-    tree <span class="token operator">=</span> data<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#将数据分片</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#stdout</span>
-    <span class="token keyword">if</span> tree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"n"</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#如果第一个是n，即上面在序列化函数中传入的n</span>
-        <span class="token keyword">return</span> None  <span class="token comment" spellcheck="true">#返回none</span>
-    queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#空队列</span>
-    root <span class="token operator">=</span> TreeNode<span class="token punctuation">(</span>int<span class="token punctuation">(</span>tree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#定义root，为treenode这个object，传入参数</span>
-    queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#root入队列</span>
-    i <span class="token operator">=</span> <span class="token number">1</span> 
-    <span class="token keyword">while</span> queue<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#当队列不为0时</span>
-        cur <span class="token operator">=</span> queue<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#当前节点为队首节点</span>
-        <span class="token keyword">if</span> cur <span class="token operator">==</span> None<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#如果当前节点为空，就继续循环</span>
-            <span class="token keyword">continue</span>
-        cur<span class="token punctuation">.</span>left <span class="token operator">=</span> TreeNode<span class="token punctuation">(</span>int<span class="token punctuation">(</span>tree<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">if</span> tree<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"n"</span> <span class="token keyword">else</span> None  
-        cur<span class="token punctuation">.</span>right <span class="token operator">=</span> TreeNode<span class="token punctuation">(</span>int<span class="token punctuation">(</span>tree<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">if</span> tree<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">"n"</span> <span class="token keyword">else</span> None
-        i <span class="token operator">+=</span> <span class="token number">2</span>
-        queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
-        queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token comment" spellcheck="true"># 下一个</span>
+        <span class="token keyword">return</span> first_match <span class="token operator">and</span> self<span class="token punctuation">.</span>isMatch<span class="token punctuation">(</span>s<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span> p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用@lru_cache(None)缓存的方式会使得时间复杂度大幅度减小</p>
+<p>from simpleson:</p>
+<p>效率很不好看，优化一下：</p>
+<ul>
+<li>记忆化搜索，避免重复递归运算（动态规划）；</li>
+<li>用索引号代替切片，减少cache过程本身的时间成本；</li>
+<li>最大限度维持原先代码的简洁逻辑。</li>
+</ul>
+<p>时间复杂度：</p>
+<ul>
+<li>改进前：平均O(n*2^(星号数))，最差O(2^n)，</li>
+<li>改进后：平均O(n*(星号数+1))，最差O(n²)</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isMatch</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">,</span> p<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 装饰符实现记忆化搜索，等价于Top-Down动态规划</span>
+        @lru_cache<span class="token punctuation">(</span>None<span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">recur</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 结束条件</span>
+            <span class="token keyword">if</span> j<span class="token operator">==</span>len<span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> i<span class="token operator">==</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># 首字母匹配</span>
+            first_match <span class="token operator">=</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">></span> i<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token punctuation">(</span>p<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">or</span> p<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'.'</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># 处理 `*`</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">>=</span>j<span class="token operator">+</span><span class="token number">2</span> <span class="token operator">and</span> p<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> recur<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">or</span> <span class="token punctuation">(</span>first_match <span class="token operator">and</span> recur<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># 处理首字母匹配</span>
+            <span class="token keyword">return</span> first_match <span class="token operator">and</span> recur<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> recur<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>用时从1000ms提升到50ms</p>
+<p>from orange(c++ version):</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
+public:
+    bool isMatch(string s, string p) {
+        return match(s.data(), p.data());
+    }
+    bool match(char* s, char* p) {
+        if (!*p) return !*s;
+        if (*(p + 1) != '*') 
+            return *s == *p || (*p == '.' && *s != '\0') ? match(s + 1, p + 1) : false; 
+        else 
+            return *s == *p || (*p == '.' && *s != '\0') ? match(s, p + 2) || match(s + 1, p) : match(s, p + 2);
+            //或者return (*s == *p || (*p == '.' && *s != '\0')) && match(s + 1, p) || match(s, p + 2);
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -681,9 +721,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Leetcode297二叉树的序列化与反序列化》
+                    《Leetcode10正则表达式匹配》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/06/17/leetcode/leetcode297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-lie-hua/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/06/20/leetcode/leetcode10-zheng-ze-biao-da-shi-pi-pei/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Antares-Wu
             </a> 采用
@@ -723,9 +763,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'www.wulinlong.com/2020/06/17/leetcode/leetcode297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-lie-hua/';
-        this.page.identifier = '/2020/06/17/leetcode/leetcode297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-lie-hua/';
-        this.page.title = 'Leetcode297二叉树的序列化与反序列化';
+        this.page.url = 'www.wulinlong.com/2020/06/20/leetcode/leetcode10-zheng-ze-biao-da-shi-pi-pei/';
+        this.page.identifier = '/2020/06/20/leetcode/leetcode10-zheng-ze-biao-da-shi-pi-pei/';
+        this.page.title = 'Leetcode10正则表达式匹配';
     };
     let disqus_shortname = '';
 
@@ -1014,30 +1054,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/17/operating-system/chrt-xi-tong-diao-yong-he-edf-jin-si-shi-shi-diao-du/">
+                <a href="/2020/06/21/leetcode124-er-cha-shu-zhong-de-zui-da-lu-jing-he/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png" class="responsive-img" alt="chrt system call and EDF near real-time scheduling">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/Leetcode_logo.png" class="responsive-img" alt="Leetcode124二叉树中的最大路径和">
                         
-                        <span class="card-title">chrt system call and EDF near real-time scheduling</span>
+                        <span class="card-title">Leetcode124二叉树中的最大路径和</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            second course design for operating system
+                            Leetcode solution
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-17
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/operating-system/" class="post-category" target="_blank">
-                                    operating system
+                            <a href="/categories/Leetcode/" class="post-category" target="_blank">
+                                    Leetcode
                                 </a>
                             
                             
@@ -1047,8 +1087,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/operating-system/" target="_blank">
-                        <span class="chip bg-color">operating system</span>
+                    <a href="/tags/Leetcode/" target="_blank">
+                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                 </div>
@@ -1062,30 +1102,30 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/16/operating-system/my-basic-shell/">
+                <a href="/2020/06/19/mushroom-classification/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/operating_system.png" class="responsive-img" alt="My basic shell">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/0.png" class="responsive-img" alt="Mushroom Classification">
                         
-                        <span class="card-title">My basic shell</span>
+                        <span class="card-title">Mushroom Classification</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            first course design for operating system
+                            Project two for Professional English
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/operating-system/" class="post-category" target="_blank">
-                                    operating system
+                            <a href="/categories/deep-learning/" class="post-category" target="_blank">
+                                    deep learning
                                 </a>
                             
                             
@@ -1095,8 +1135,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/operating-system/" target="_blank">
-                        <span class="chip bg-color">operating system</span>
+                    <a href="/tags/deep-learning/" target="_blank">
+                        <span class="chip bg-color">deep learning</span>
                     </a>
                     
                 </div>
