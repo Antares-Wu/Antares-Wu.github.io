@@ -4,11 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Birthday Problem, ECNU DaSE">
+    <meta name="keywords" content="Leetcode139单词拆分, ECNU DaSE">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="birthday problemCoincidentally, during the first year of high school, three people in the class had the same birthday. I">
+    <meta name="description" content="class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -&gt; bool:
+        n = len(s) #获取s的长度
+        maxLeng">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Birthday Problem | Antares-Wu&#39;s blog</title>
+    <title>Leetcode139单词拆分 | Antares-Wu&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -290,13 +293,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wu_lin_long/image/raw/master/featureimages/概率论封面.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wu_lin_long/image/raw/master/featureimages/Leetcode_logo.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Birthday Problem
+                        Leetcode139单词拆分
                     </div>
                 </div>
             </div>
@@ -407,8 +410,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/probability-theory/" target="_blank">
-                            <span class="chip bg-color">probability theory</span>
+                        <a href="/tags/Leetcode/" target="_blank">
+                            <span class="chip bg-color">Leetcode</span>
                         </a>
                         
                     </div>
@@ -419,8 +422,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/programming-practice/" class="post-category" target="_blank">
-                            programming practice
+                        <a href="/categories/Leetcode/" class="post-category" target="_blank">
+                            Leetcode
                         </a>
                         
                     </div>
@@ -431,7 +434,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-15
+                    2020-06-25
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -445,7 +448,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    372
+                    158
                 </div>
                 
 
@@ -468,45 +471,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="birthday-problem"><a href="#birthday-problem" class="headerlink" title="birthday problem"></a>birthday problem</h2><p>Coincidentally, during the first year of high school, three people in the class had the same birthday. It was easy to calculate the probability of two or more people having the same birthday, however, I was curious about the probability of three or more people.<br>It turns out to be around 6.6%, and the probability of only two people having the same birthday is around 82.5%, which is consistent with perceptual cognition.</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#计算40个人当中，只有两个人生日相同的概率</span>
-<span class="token keyword">import</span> math
-Sn <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token keyword">for</span> n <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">42</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true">#n是选出来结对的人</span>
-    <span class="token comment" spellcheck="true">#在可能的40个人所结成的780种可能的对子中，找出n/2对，然后把每一对看成一个人</span>
-    pairs <span class="token operator">=</span> <span class="token number">1</span>
-    temp <span class="token operator">=</span> n
-    <span class="token comment" spellcheck="true">#计算pairs</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>temp <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
-        pairs <span class="token operator">=</span> pairs <span class="token operator">*</span> math<span class="token punctuation">.</span>comb<span class="token punctuation">(</span><span class="token number">42</span> <span class="token operator">-</span> temp<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-        temp <span class="token operator">-=</span> <span class="token number">2</span>
-    <span class="token comment" spellcheck="true"># 去除重复的pairs</span>
-    pairs <span class="token operator">=</span> pairs <span class="token operator">/</span> math<span class="token punctuation">.</span>perm<span class="token punctuation">(</span>int<span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>n <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">#print(pairs)</span>
-    <span class="token comment" spellcheck="true">#计算在挑出n个人结对之后，所产生的可能的概率</span>
-    Pn <span class="token operator">=</span> pairs <span class="token operator">*</span> math<span class="token punctuation">.</span>perm<span class="token punctuation">(</span><span class="token number">365</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token operator">-</span>int<span class="token punctuation">(</span>n<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span>math<span class="token punctuation">.</span>pow<span class="token punctuation">(</span><span class="token number">365</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">#累计</span>
-    Sn <span class="token operator">=</span> Sn <span class="token operator">+</span> Pn
-<span class="token comment" spellcheck="true">#print('%.10f' % Sn)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> math
+                <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">wordBreak</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">,</span> wordDict<span class="token punctuation">:</span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
+        n <span class="token operator">=</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#获取s的长度</span>
+        maxLenghofWord <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">#设置初始的字符长度是0</span>
+        dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#初始化动态规划数组</span>
+        <span class="token keyword">for</span> word <span class="token keyword">in</span> wordDict<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#对wordDict中的每个词</span>
+            maxLenghofWord <span class="token operator">=</span> max<span class="token punctuation">(</span>maxLenghofWord<span class="token punctuation">,</span>len<span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#更新每次最长单词的长度</span>
+        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span> <span class="token comment" spellcheck="true">#第一个动态规划数组位置设置为true</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#循环n+1次</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>maxLenghofWord<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#循环maxLengofWord次</span>
+                former <span class="token operator">=</span> max<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>i<span class="token operator">-</span>j<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#前一个位置</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">|</span><span class="token operator">=</span>  <span class="token punctuation">(</span>s<span class="token punctuation">[</span>former<span class="token punctuation">:</span>i<span class="token punctuation">]</span> <span class="token keyword">in</span> wordDict<span class="token punctuation">)</span> <span class="token operator">and</span> dp<span class="token punctuation">[</span>former<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#前一个位置是true &amp;&amp; 有一个词匹配到现在的位置</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-p <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> math<span class="token punctuation">.</span>perm<span class="token punctuation">(</span><span class="token number">365</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token operator">/</span>math<span class="token punctuation">.</span>pow<span class="token punctuation">(</span><span class="token number">365</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'高一班上至少两人生日相同的概率：%.10f'</span> <span class="token operator">%</span> p<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%e'</span> <span class="token operator">%</span> math<span class="token punctuation">.</span>perm<span class="token punctuation">(</span><span class="token number">365</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%e'</span> <span class="token operator">%</span> math<span class="token punctuation">.</span>pow<span class="token punctuation">(</span><span class="token number">365</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-p <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> math<span class="token punctuation">.</span>perm<span class="token punctuation">(</span><span class="token number">365</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token operator">/</span>math<span class="token punctuation">.</span>pow<span class="token punctuation">(</span><span class="token number">365</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span> <span class="token operator">-</span> Sn
-
-<span class="token comment" spellcheck="true">#p2 = math.comb(40, 2) * math.perm(365, 39)/math.pow(365,40)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'只有两个人生日相同的概率：%.10lf'</span> <span class="token operator">%</span> Sn<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'至少三人生日相同的概率：%.10f'</span> <span class="token operator">%</span> p<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>高一班上至少两人生日相同的概率：0.8912318098
-3.374555e+101
-3.102520e+102
-只有两个人生日相同的概率：0.8243423240
-至少三人生日相同的概率：0.0668894858</code></pre>
             </div>
             <hr />
 
@@ -664,9 +642,9 @@ p <span class="token operator">=</span> <span class="token number">1</span> <spa
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Birthday Problem》
+                    《Leetcode139单词拆分》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/15/birthday-problem/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/06/25/leetcode139-dan-ci-chai-fen/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Antares-Wu
             </a> 采用
@@ -706,9 +684,9 @@ p <span class="token operator">=</span> <span class="token number">1</span> <spa
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'www.wulinlong.com/2020/05/15/birthday-problem/';
-        this.page.identifier = '/2020/05/15/birthday-problem/';
-        this.page.title = 'Birthday Problem';
+        this.page.url = 'www.wulinlong.com/2020/06/25/leetcode139-dan-ci-chai-fen/';
+        this.page.identifier = '/2020/06/25/leetcode139-dan-ci-chai-fen/';
+        this.page.title = 'Leetcode139单词拆分';
     };
     let disqus_shortname = '';
 
@@ -993,45 +971,47 @@ p <span class="token operator">=</span> <span class="token number">1</span> <spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/05/20/little-tricks/">
+                <a href="/2020/06/25/leetcode139-dan-ci-chai-fen/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/qiguaidezhishizengjiale.jpg" class="responsive-img" alt="little tricks">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/Leetcode_logo.png" class="responsive-img" alt="Leetcode139单词拆分">
                         
-                        <span class="card-title">little tricks</span>
+                        <span class="card-title">Leetcode139单词拆分</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            little tricks I used in daily
+                            Leetcode solution
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                            <a href="/categories/Leetcode/" class="post-category" target="_blank">
+                                    Leetcode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/Leetcode/" target="_blank">
+                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                 </div>
@@ -1045,30 +1025,30 @@ p <span class="token operator">=</span> <span class="token number">1</span> <spa
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/11/hexo-bo-ke-cong-github-dao-a-li-yun/">
+                <a href="/2020/06/24/leetcode16-zui-jie-jin-de-san-shu-zhi-he/">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/网站截图1.jpg" class="responsive-img" alt="hexo博客从github到阿里云">
+                        <img src="https://gitee.com/wu_lin_long/image/raw/master/featureimages/Leetcode_logo.png" class="responsive-img" alt="Leetcode16最接近的三数之和">
                         
-                        <span class="card-title">hexo博客从github到阿里云</span>
+                        <span class="card-title">Leetcode16最接近的三数之和</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            a record for my process of building
+                            Leetcode solution
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                            <a href="/categories/Leetcode/" class="post-category" target="_blank">
+                                    Leetcode
                                 </a>
                             
                             
@@ -1078,8 +1058,8 @@ p <span class="token operator">=</span> <span class="token number">1</span> <spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/随笔/" target="_blank">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/Leetcode/" target="_blank">
+                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                 </div>

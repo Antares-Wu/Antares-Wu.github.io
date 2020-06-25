@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>www.wulinlong.com/2020/06/21/leetcode124-er-cha-shu-zhong-de-zui-da-lu-jing-he/</loc>
-    <lastmod>2020-06-20</lastmod>
+    <loc>www.wulinlong.com/2020/06/25/leetcode139-dan-ci-chai-fen/</loc>
+    <lastmod>2020-06-25</lastmod>
+  </url>  <url>
+    <loc>www.wulinlong.com/2020/06/24/leetcode16-zui-jie-jin-de-san-shu-zhi-he/</loc>
+    <lastmod>2020-06-24</lastmod>
+  </url>  <url>
+    <loc>www.wulinlong.com/2020/06/22/leetcode/leetcode-mian-shi-ti-16-18-mo-shi-pi-pei/</loc>
+    <lastmod>2020-06-24</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/06/20/leetcode/leetcode10-zheng-ze-biao-da-shi-pi-pei/</loc>
+    <lastmod>2020-06-22</lastmod>
+  </url>  <url>
+    <loc>www.wulinlong.com/2020/06/21/leetcode/leetcode124-er-cha-shu-zhong-de-zui-da-lu-jing-he/</loc>
     <lastmod>2020-06-20</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/06/19/mushroom-classification/</loc>
