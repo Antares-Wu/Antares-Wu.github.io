@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>www.wulinlong.com/2020/06/25/leetcode139-dan-ci-chai-fen/</loc>
+    <loc>www.wulinlong.com/2020/06/26/leetcode/leetcode-mian-shi-ti-0201-yi-chu-chong-fu-jie-dian/</loc>
+    <lastmod>2020-06-26</lastmod>
+  </url>  <url>
+    <loc>www.wulinlong.com/2020/06/25/leetcode/leetcode139-dan-ci-chai-fen/</loc>
     <lastmod>2020-06-25</lastmod>
   </url>  <url>
-    <loc>www.wulinlong.com/2020/06/24/leetcode16-zui-jie-jin-de-san-shu-zhi-he/</loc>
+    <loc>www.wulinlong.com/2020/06/24/leetcode/leetcode16-zui-jie-jin-de-san-shu-zhi-he/</loc>
     <lastmod>2020-06-24</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/06/22/leetcode/leetcode-mian-shi-ti-16-18-mo-shi-pi-pei/</loc>
@@ -17,9 +20,6 @@
     <lastmod>2020-06-20</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/06/19/mushroom-classification/</loc>
-    <lastmod>2020-06-18</lastmod>
-  </url>  <url>
-    <loc>www.wulinlong.com/2020/03/01/guan-yu-kai-yuan-de-yi-dian-ge-ren-li-jie/</loc>
     <lastmod>2020-06-18</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/06/19/leetcode/leetcode125-yan-zheng-hui-wen-chuan/</loc>
@@ -58,19 +58,10 @@
     <loc>www.wulinlong.com/2020/04/11/hexo-bo-ke-cong-github-dao-a-li-yun/</loc>
     <lastmod>2020-04-25</lastmod>
   </url>  <url>
-    <loc>www.wulinlong.com/2020/03/17/mathematical-foundation-of-data-science-engineering-exercises/</loc>
-    <lastmod>2020-04-15</lastmod>
-  </url>  <url>
-    <loc>www.wulinlong.com/2020/03/14/probability-theory-exercises/</loc>
-    <lastmod>2020-04-15</lastmod>
-  </url>  <url>
     <loc>www.wulinlong.com/2020/03/21/document-object-model/</loc>
     <lastmod>2020-04-13</lastmod>
   </url>  <url>
     <loc>www.wulinlong.com/2020/03/15/zai-ying-hua-man-tian-fei-wu-de-shi-ke/</loc>
-    <lastmod>2020-04-13</lastmod>
-  </url>  <url>
-    <loc>www.wulinlong.com/2020/03/03/xie-zai-kai-xue-zhi-qian/</loc>
     <lastmod>2020-04-13</lastmod>
   </url>
 </urlset>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.wulinlong.com/"/>
-  <updated>2020-06-25T14:09:10.783Z</updated>
+  <updated>2020-06-26T08:49:17.580Z</updated>
   <id>www.wulinlong.com/</id>
   
   <author>
@@ -17,9 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Leetcode面试题0201移除重复节点</title>
+    <link href="www.wulinlong.com/2020/06/26/leetcode/leetcode-mian-shi-ti-0201-yi-chu-chong-fu-jie-dian/"/>
+    <id>www.wulinlong.com/2020/06/26/leetcode/leetcode-mian-shi-ti-0201-yi-chu-chong-fu-jie-dian/</id>
+    <published>2020-06-26T08:05:56.000Z</published>
+    <updated>2020-06-26T08:49:17.580Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;# Definition for
+        
+      
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/categories/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="www.wulinlong.com/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Leetcode139单词拆分</title>
-    <link href="www.wulinlong.com/2020/06/25/leetcode139-dan-ci-chai-fen/"/>
-    <id>www.wulinlong.com/2020/06/25/leetcode139-dan-ci-chai-fen/</id>
+    <link href="www.wulinlong.com/2020/06/25/leetcode/leetcode139-dan-ci-chai-fen/"/>
+    <id>www.wulinlong.com/2020/06/25/leetcode/leetcode139-dan-ci-chai-fen/</id>
     <published>2020-06-25T14:06:41.000Z</published>
     <updated>2020-06-25T14:09:10.783Z</updated>
     
@@ -44,8 +70,8 @@
   
   <entry>
     <title>Leetcode16最接近的三数之和</title>
-    <link href="www.wulinlong.com/2020/06/24/leetcode16-zui-jie-jin-de-san-shu-zhi-he/"/>
-    <id>www.wulinlong.com/2020/06/24/leetcode16-zui-jie-jin-de-san-shu-zhi-he/</id>
+    <link href="www.wulinlong.com/2020/06/24/leetcode/leetcode16-zui-jie-jin-de-san-shu-zhi-he/"/>
+    <id>www.wulinlong.com/2020/06/24/leetcode/leetcode16-zui-jie-jin-de-san-shu-zhi-he/</id>
     <published>2020-06-24T09:36:15.000Z</published>
     <updated>2020-06-24T10:00:44.777Z</updated>
     
@@ -531,32 +557,6 @@
     
     
       <category term="frontend" scheme="www.wulinlong.com/tags/frontend/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mathematical Foundation of Data Science &amp; Engineering Exercises</title>
-    <link href="www.wulinlong.com/2020/03/17/mathematical-foundation-of-data-science-engineering-exercises/"/>
-    <id>www.wulinlong.com/2020/03/17/mathematical-foundation-of-data-science-engineering-exercises/</id>
-    <published>2020-03-16T16:36:18.000Z</published>
-    <updated>2020-04-15T06:21:59.335Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;数学基础第一次作业&quot;&gt;&lt;a href=&quot;#数学基础第一次作业&quot; class=&quot;headerlink&quot; title=&quot;数学基础第一次作业&quot;&gt;&lt;/a&gt;数学基础第一次作业&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;0.png&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="exercises" scheme="www.wulinlong.com/categories/exercises/"/>
-    
-    
-      <category term="Mathematical Foundation of Data Science &amp; Engineering" scheme="www.wulinlong.com/tags/Mathematical-Foundation-of-Data-Science-Engineering/"/>
     
   </entry>
   
